@@ -1,0 +1,43 @@
+
+"Target" = "Mål";
+"Label" = "Beskrivelse";
+"Repeat" = "Gentag";
+"Sound" = "Lyd";
+
+"Never" = "Aldrig";
+"Daily" = "Daglig";
+"Weekly" = "Ugentlig";
+"Biweekly" = "Hver 2. uge";
+"Monthly" = "Månedlig";
+"Yearly" = "Årlig";
+
+"None" = "Ingen";
+"Beeps" = "Bip";
+"Bells" = "Klokker";
+"Drums" = "Trommer";
+"Guitar" = "Guitar";
+"Rock" = "Rock";
+"Xmas" = "Jul";
+
+"Cancel" = "Annuller";
+"Save" = "Gem";
+"Delete" = "Slet";
+"Back" = "Tilbage";
+"Done" = "OK";
+
+"Countdown" = "Nedtælling";
+"Countdowns" = "Nedtællinger";
+"Add Countdown" = "Tilføj nedtælling";
+"Edit Countdown" = "Rediger nedtælling";
+"Delete Countdown" = "Slet nedtælling";
+"Are you sure you want to delete this countdown?" = "Er du sikker på, at du vil slette denne nedtælling?";
+
+"Up Next" = "Næste";
+
+"Store" = "Butik";
+"Tone Store" = "Tonebutik";
+"Tones" = "Toner";
+"Sound will be played on iPhone." = "Lyd afspilles på iPhone.";
+"Songs" = "Sange";
+"Choose a Song" = "Vælg en sang";
+"The song will play when Countdowns is in the foreground." = "Sangen afspilles når Nedtællinger er i forgrunden.";

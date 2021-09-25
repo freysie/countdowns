@@ -1,0 +1,24 @@
+
+"Target" = "Cible";
+"Label" = "Label";
+"Repeat" = "Répéter";
+"Sound" = "Sonore";
+
+"Never" = "Jamais";
+"Daily" = "Au quotidien";
+"Weekly" = "Hebdomadaire";
+"Biweekly" = "Bihebdomadaire";
+"Monthly" = "Mensuel";
+"Yearly" = "Annuel";
+
+"Cancel" = "Annuler";
+"Save" = "Enregistrer";
+
+"Countdown" = "Compte à rebours";
+"Countdowns" = "Comptes à rebours";
+"Add Countdown" = "Ajouter un compte à rebours";
+"Edit Countdown" = "Modifier le compte à rebours";
+"Delete Countdown" = "Supprimer le compte à rebours";
+"Are you sure you want to delete this countdown?" = "Voulez-vous vraiment supprimer ce compte à rebours ?";
+
+"Up Next" = "Suivant";

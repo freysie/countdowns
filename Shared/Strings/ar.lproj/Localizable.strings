@@ -1,0 +1,23 @@
+
+"Target" = "الهدف";
+"Label" = "التسمية";
+"Repeat" = "يكرر";
+
+"Never" = "مطلقا";
+"Daily" = "Päivittäin";
+"Weekly" = "Viikoittain";
+"Biweekly" = "Joka toinen viikko";
+"Monthly" = "Kuukausittain";
+"Yearly" = "Vuosittain";
+
+"Cancel" = "Vuosittain";
+"Save" = "Tallentaa";
+
+"Countdown" = "العد التنازلي";
+"Countdowns" = "عد تنازلي";
+"Add Countdown" = "أضف العد التنازلي";
+"Edit Countdown" = "تحرير العد التنازلي";
+"Delete Countdown" = "حذف العد التنازلي";
+"Are you sure you want to delete this countdown?" = "هل أنت متأكد أنك تريد حذف هذا العد التنازلي؟";
+
+"Up Next" = "التالي";

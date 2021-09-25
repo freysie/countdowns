@@ -1,0 +1,32 @@
+
+"Target" = "Kohde";
+"Label" = "Kuvaus";
+"Repeat" = "Toistaa";
+"Sound" = "Ääni";
+
+"Never" = "Ei ikinä";
+"Daily" = "Päivittäin";
+"Weekly" = "Viikoittain";
+"Biweekly" = "Joka toinen viikko";
+"Monthly" = "Kuukausittain";
+"Yearly" = "Vuosittain";
+
+"None" = "Ingen";
+"Default" = "Standard";
+"Guitar" = "Gitar";
+"Drums" = "Trommer";
+"Magical Cute Bells" = "Magiske søte klokker";
+"Industrial Matter" = "Industriell materie";
+
+"Cancel" = "Peruuttaa";
+"Save" = "Tallentaa";
+"Delete" = "Poistaa";
+
+"Countdown" = "Lähtölaskenta";
+"Countdowns" = "Lähtölaskenta";
+"Add Countdown" = "Lisää lähtölaskenta";
+"Edit Countdown" = "Muokkaa lähtölaskenta";
+"Delete Countdown" = "Poista lähtölaskenta";
+"Are you sure you want to delete this countdown?" = "Haluatko varmasti poistaa tämän laskurin?";
+
+"Up Next" = "Seuraavaksi";

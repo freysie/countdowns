@@ -1,0 +1,32 @@
+
+"Target" = "Ţintă";
+"Label" = "Descriere";
+"Repeat" = "Repeta";
+"Sound" = "Sunet";
+
+"Never" = "Niciodată";
+"Daily" = "Zilnic";
+"Weekly" = "Săptămânal";
+"Biweekly" = "Bisaptamanal";
+"Monthly" = "Lunare";
+"Yearly" = "Anual";
+
+"None" = "Niciuna";
+"Default" = "Implicit";
+"Drums" = "Tobe";
+"Guitar" = "Chitară";
+"Magical Cute Bells" = "Clopote magice drăguțe";
+"Industrial Matter" = "Materie industrială";
+
+"Cancel" = "Anulare";
+"Save" = "Salvați";
+"Delete" = "Șterge";
+
+"Countdown" = "Numărătoarea inversă";
+"Countdowns" = "Numărătoare inversă";
+"Add Countdown" = "Adăugați numărătoarea inversă";
+"Edit Countdown" = "Editați numărătoarea inversă";
+"Delete Countdown" = "Ștergeți numărătoarea inversă";
+"Are you sure you want to delete this countdown?" = "Sigur doriți să ștergeți această numărătoare inversă?";
+
+"Up Next" = "Urmeaza";

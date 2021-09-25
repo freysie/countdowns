@@ -1,0 +1,23 @@
+
+"Target" = "Objetivo";
+"Label" = "Descripción";
+"Repeat" = "Repetir";
+
+"Never" = "Nunca";
+"Daily" = "Diaria";
+"Weekly" = "Semanal";
+"Biweekly" = "Bisemanal";
+"Monthly" = "Mensual";
+"Yearly" = "Anual";
+
+"Cancel" = "Cancelar";
+"Save" = "Salvar";
+
+"Countdown" = "Cuenta regresiva";
+"Countdowns" = "Cuenta regresiva";
+"Add Countdown" = "Agregar cuenta regresiva";
+"Edit Countdown" = "Editar cuenta regresiva";
+"Delete Countdown" = "Eliminar cuenta regresiva";
+"Are you sure you want to delete this countdown?" = "¿Está seguro de que desea eliminar esta cuenta atrás?";
+
+"Up Next" = "Siguiente";

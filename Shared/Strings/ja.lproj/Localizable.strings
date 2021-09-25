@@ -1,0 +1,32 @@
+
+"Target" = "目標";
+"Label" = "説明";
+"Repeat" = "繰り返す";
+"Sound" = "音";
+
+"Never" = "決して";
+"Daily" = "毎日";
+"Weekly" = "毎週";
+"Biweekly" = "隔週";
+"Monthly" = "毎月";
+"Yearly" = "毎年";
+
+"None" = "なし";
+"Default" = "デフォルト";
+"Guitar" = "ギター";
+"Drums" = "ドラム";
+"Magical Cute Bells" = "魔法のかわいい鐘";
+"Industrial Matter" = "工業用生地";
+
+"Cancel" = "キャンセル";
+"Save" = "保存する";
+"Delete" = "削除";
+
+"Countdown" = "カウントダウン";
+"Countdowns" = "カウントダウン";
+"Add Countdown" = "カウントダウンを追加";
+"Edit Countdown" = "カウントダウンの編集";
+"Delete Countdown" = "カウントダウンを削除";
+"Are you sure you want to delete this countdown?" = "このカウントダウンを削除してもよろしいですか？";
+
+"Up Next" = "次に";

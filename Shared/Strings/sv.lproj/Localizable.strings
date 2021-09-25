@@ -1,0 +1,23 @@
+
+"Target" = "Mål";
+"Label" = "Beskrivning";
+"Repeat" = "Upprepa";
+
+"Never" = "Aldrig";
+"Daily" = "Dagligen";
+"Weekly" = "Veckovis";
+"Biweekly" = "Varannan vecka";
+"Monthly" = "Månatlig";
+"Yearly" = "Årligen";
+
+"Cancel" = "Avbryt";
+"Save" = "Spara";
+
+"Countdown" = "Nedräkning";
+"Countdowns" = "Nedräkningar";
+"Add Countdown" = "Lägg till nedräkning";
+"Edit Countdown" = "Redigera nedräkning";
+"Delete Countdown" = "Radera nedräkning";
+"Are you sure you want to delete this countdown?" = "Är du säker på att du vill ta bort den här nedräkningen?";
+
+"Up Next" = "Strax";

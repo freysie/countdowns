@@ -1,0 +1,25 @@
+
+"Target" = "Цель";
+"Label" = "Описание";
+"Repeat" = "Повторить";
+"Sound" = "";
+
+"Never" = "Никогда";
+"Daily" = "Ежедневно";
+"Weekly" = "Еженедельно";
+"Biweekly" = "Раз в две недели";
+"Monthly" = "Ежемесячно";
+"Yearly" = "Ежегодно";
+
+"Cancel" = "Отмена";
+"Save" = "Сохранить";
+"Delete" = "";
+
+"Countdown" = "Обратный отсчет";
+"Countdowns" = "Обратный отсчет";
+"Add Countdown" = "Добавить обратный отсчет";
+"Edit Countdown" = "Изменить обратный отсчет";
+"Delete Countdown" = "Удалить обратный отсчет";
+"Are you sure you want to delete this countdown?" = "Вы уверены, что хотите удалить этот обратный отсчет?";
+
+"Up Next" = "Следующий";

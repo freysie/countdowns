@@ -1,0 +1,48 @@
+
+"Target" = "Ziel";
+"Label" = "Beschreibung";
+"Repeat" = "Wiederholen";
+"Sound" = "Klang";
+
+"Never" = "Niemals";
+"Daily" = "Täglich";
+"Weekly" = "Wöchentlich";
+"Biweekly" = "Zweiwöchentlich";
+"Monthly" = "Monatlich";
+"Yearly" = "Jährlich";
+
+"None" = "Keiner";
+"Beeps" = "Piepsen";
+"Bells" = "Glocken";
+"Drums" = "Schlagzeug";
+"Guitar" = "Gitarre";
+"Rock" = "Rock";
+"Xmas" = "Weihnachten";
+
+"Cancel" = "Abbrechen";
+"Save" = "Sparen";
+"Delete" = "Löschen";
+"Back" = "Zurück";
+"Done" = "Fertig";
+
+"Countdown" = "Countdown";
+"Countdowns" = "Countdowns";
+"Add Countdown" = "Countdown hinzufügen";
+"Edit Countdown" = "Countdown bearbeiten";
+"Delete Countdown" = "Countdown löschen";
+"Are you sure you want to delete this countdown?" = "Möchten Sie diesen Countdown wirklich löschen?";
+
+"Up Next" = "Nächste";
+
+"Store" = "Geschäft";
+"Tone Store" = "Tongeschäft";
+"Tones" = "Töne";
+"Sound will be played on iPhone." = "Der Ton wird auf dem iPhone abgespielt.";
+"Songs" = "Lieder";
+"Choose a Song" = "Wähle ein Lied";
+"The song will play when Countdowns is in the foreground." = "Das Lied wird abgespielt, wenn Countdowns im Vordergrund steht.";
+
+"Show Up Next" = "Nächste anzeigen";
+"Show Target in List" = "Ziel in Liste anzeigen";
+"Delete from List" = "Aus Liste löschen";
+"Autodelete Countdowns" = "Countdowns automatisch löschen";

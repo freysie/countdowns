@@ -1,0 +1,32 @@
+
+"Target" = "Mål";
+"Label" = "Beskrivelse";
+"Repeat" = "Gentag";
+"Sound" = "Lyd";
+
+"Never" = "Aldrig";
+"Daily" = "Daglig";
+"Weekly" = "Ugentlig";
+"Biweekly" = "Hver 2. uge";
+"Monthly" = "Månedlig";
+"Yearly" = "Årlig";
+
+"None" = "Ingen";
+"Default" = "Standard";
+"Guitar" = "Guitar";
+"Drums" = "Trommer";
+"Magical Cute Bells" = "Magiske søde klokker";
+"Industrial Matter" = "Industrielt stof";
+
+"Cancel" = "Annuller";
+"Save" = "Gem";
+"Delete" = "Slet";
+
+"Countdown" = "Nedtælling";
+"Countdowns" = "Nedtællinger";
+"Add Countdown" = "Tilføj nedtælling";
+"Edit Countdown" = "Rediger nedtælling";
+"Delete Countdown" = "Slet nedtælling";
+"Are you sure you want to delete this countdown?" = "Er du sikker på, at du vil slette denne nedtælling?";
+
+"Up Next" = "Næste";

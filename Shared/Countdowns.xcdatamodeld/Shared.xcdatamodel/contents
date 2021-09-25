@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21A5304g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Countdown" representedClassName="Countdown" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="label" attributeType="String" defaultValueString=""/>
+        <attribute name="repeatValue" attributeType="String" defaultValueString="never" customClassName="RepeatMode"/>
+        <attribute name="songID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="source" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="target" attributeType="Date" defaultDateTimeInterval="631148400" usesScalarValueType="NO"/>
+        <attribute name="toneValue" attributeType="String" defaultValueString="guitar"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="Countdown" positionX="-63" positionY="-9" width="128" height="134"/>
+    </elements>
+</model>
