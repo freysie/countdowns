@@ -13,7 +13,7 @@ struct DetailsView: View {
         Button(action: { editSheetIsPresented = true }) {
           Image(systemName: "pencil")
         }
-        .buttonStyle(.circular)
+        .buttonStyle(.circular())
         
         Spacer()
       }
@@ -21,7 +21,9 @@ struct DetailsView: View {
       .padding(.horizontal, 9)
     }
     .sheet(isPresented: $editSheetIsPresented) {
-      EditForm(countdown: countdown)
+      NavigationView {
+        EditForm(countdown: countdown)
+      }
     }
   }
 }

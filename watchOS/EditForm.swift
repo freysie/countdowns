@@ -13,13 +13,7 @@ struct EditForm: View {
       Section {
         TextField("Label", text: .init($countdown.label)!)
         
-        // TODO: implement watchOS date picker
-        Button(action: {}) {
-          Text("Target")
-          Text("1/1/21, 12:00 AM")
-            .font(.footnote)
-            .foregroundStyle(.secondary)
-        }
+        DatePicker("Target", selection: .constant(Date()), minimumDate: Date(), onCompletion: { countdown.target = $0 })
         
         Picker("Repeat", selection: $countdown.repeat) {
           ForEach(RepeatMode.allCases) {
@@ -84,5 +78,22 @@ struct EditForm: View {
       let nsError = error as NSError
       fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
     }
+  }
+}
+
+import Dynamic
+
+struct EditForm_Previews: PreviewProvider {
+  static var previews: some View {
+    ForEach(previewDevices) { device in
+      NavigationView {
+        EditForm(countdown: Countdown())
+      }
+      .previewDevice(device)
+      .previewDisplayName(device.rawValue.components(separatedBy: " - ").last!)
+      .previewStatusBarTime(hidden: true)
+    }
+//    .environment(\.locale, Locale(identifier: "ro"))
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
   }
 }

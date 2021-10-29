@@ -3,7 +3,7 @@ import ClockKit
 import UserNotifications
 import WatchConnectivity
 
-let permitsUsageOfPrivateAPIs = false
+let permitsUsageOfPrivateAPIs = true
 
 @main
 struct CountdownsApp: App {

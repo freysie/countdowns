@@ -42,10 +42,12 @@ import ClockKit
 import SwiftUI
 
 let previewDevices = [
-  PreviewDevice(rawValue: "Apple Watch Series 6 - 40mm"),
   PreviewDevice(rawValue: "Apple Watch Series 7 - 41mm"),
+  PreviewDevice(rawValue: "Apple Watch Series 7 - 45mm"),
+  PreviewDevice(rawValue: "Apple Watch Series 6 - 40mm"),
   PreviewDevice(rawValue: "Apple Watch Series 6 - 44mm"),
-  PreviewDevice(rawValue: "Apple Watch Series 7 - 45mm")
+  PreviewDevice(rawValue: "Apple Watch Series 3 - 38mm"),
+  PreviewDevice(rawValue: "Apple Watch Series 3 - 42mm"),
 ]
 
 let previewFaceColors = [
