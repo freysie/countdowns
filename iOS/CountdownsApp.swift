@@ -3,6 +3,7 @@ import MusicKit
 import UserNotifications
 import WatchConnectivity
 import Introspect
+import Intents
 
 // TODO: test this with multiple window scenes on iPad
 var tabBarController: UITabBarController?
@@ -59,6 +60,10 @@ struct CountdownsApp: App {
     ) -> Bool {
       UIView.appearance().tintColor = UIColor(named: "AccentColor")
       
+//      INPreferences.requestSiriAuthorization {
+//        print($0)
+//      }
+      
       UNUserNotificationCenter.current().delegate = self
       UNUserNotificationCenter.configure()
       
@@ -75,6 +80,15 @@ struct CountdownsApp: App {
       return true
     }
     
+    func application(_ application: UIApplication, handlerFor intent: INIntent) -> Any? {
+      switch intent {
+      case is SetCountdownIntent:
+        return nil
+      default:
+        return nil
+      }
+    }
+
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,
       willPresent notification: UNNotification

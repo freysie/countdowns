@@ -61,6 +61,9 @@
 		09AA659826FC89B200BD3F98 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0997141B26F89F8400D33AF7 /* Settings.bundle */; };
 		09AA659926FC8A9000BD3F98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A1A0A26F7D8CC00A4504D /* Assets.xcassets */; };
 		09AA65A026FCD6EF00BD3F98 /* GaugeStyle+Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AA659E26FCD6D800BD3F98 /* GaugeStyle+Fill.swift */; };
+		09ACC3C52729C0B30055A212 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC3C42729C0B30055A212 /* Intents.intentdefinition */; };
+		09ACC3C62729C0B30055A212 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC3C42729C0B30055A212 /* Intents.intentdefinition */; };
+		09ACC3C72729C0B30055A212 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC3C42729C0B30055A212 /* Intents.intentdefinition */; };
 		09C12C5026F8111700BD84ED /* CountdownListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C12C4F26F8111700BD84ED /* CountdownListItem.swift */; };
 		09C12C5326F8115A00BD84ED /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C12C5226F8115A00BD84ED /* ListView.swift */; };
 		09C12C5626F8118600BD84ED /* CountdownProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C12C5526F8118600BD84ED /* CountdownProgressView.swift */; };
@@ -236,6 +239,9 @@
 		0997148326F99D3F00D33AF7 /* EditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForm.swift; sourceTree = "<group>"; };
 		0997148626F9B60300D33AF7 /* UITabBarController+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Hidden.swift"; sourceTree = "<group>"; };
 		09AA659E26FCD6D800BD3F98 /* GaugeStyle+Fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GaugeStyle+Fill.swift"; sourceTree = "<group>"; };
+		09ACC3C42729C0B30055A212 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		09ACC3C82729C1520055A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09ACC3C92729C1520055A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09C12C4F26F8111700BD84ED /* CountdownListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownListItem.swift; sourceTree = "<group>"; };
 		09C12C5226F8115A00BD84ED /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		09C12C5526F8118600BD84ED /* CountdownProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownProgressView.swift; sourceTree = "<group>"; };
@@ -351,6 +357,7 @@
 				09C12C4F26F8111700BD84ED /* CountdownListItem.swift */,
 				3B3A1A0726F7D8B600A4504D /* CountdownsApp.swift */,
 				3B3A1A2826F7DA1B00A4504D /* EditForm.swift */,
+				09ACC3C92729C1520055A212 /* Info.plist */,
 				09C12C5226F8115A00BD84ED /* ListView.swift */,
 				09C12C5B26F8170400BD84ED /* NavigationLink+Empty.swift */,
 				09F9D16526FAD9A500380D74 /* RepeatModePicker.swift */,
@@ -397,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				09F9D14B26FACD5000380D74 /* CountdownsApp.swift */,
+				09ACC3C82729C1520055A212 /* Info.plist */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -429,6 +437,7 @@
 				09C12CB826F8873F00BD84ED /* CountdownFormatter.swift */,
 				09C12C5526F8118600BD84ED /* CountdownProgressView.swift */,
 				3B3A1A0526F7D8B600A4504D /* Countdowns.xcdatamodeld */,
+				09ACC3C42729C0B30055A212 /* Intents.intentdefinition */,
 				09D6A8792705E63F00CB11FD /* Optional+RawRepresentableString.swift */,
 				3B3A1A0926F7D8B600A4504D /* PersistenceController.swift */,
 				09F9D14626FAC95000380D74 /* PersistenceController+Preview.swift */,
@@ -676,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0997148226F99D3800D33AF7 /* DetailsView.swift in Sources */,
+				09ACC3C72729C0B30055A212 /* Intents.intentdefinition in Sources */,
 				0913FD5326FD71F400A28DEA /* Countdown+Fetch.swift in Sources */,
 				09EAE31E270079AD0036F047 /* ComplicationController.swift in Sources */,
 				0997145026F8A78200D33AF7 /* Countdown+TimeRemaining.swift in Sources */,
@@ -720,6 +730,7 @@
 			files = (
 				09C12CB326F8835E00BD84ED /* Tone.swift in Sources */,
 				09D6A8802705FF4400CB11FD /* Countdown+UUIDString.swift in Sources */,
+				09ACC3C52729C0B30055A212 /* Intents.intentdefinition in Sources */,
 				09F9D16626FAD9A500380D74 /* RepeatModePicker.swift in Sources */,
 				09C12C5326F8115A00BD84ED /* ListView.swift in Sources */,
 				09C12CB626F8862100BD84ED /* String+TitleCased.swift in Sources */,
@@ -758,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09ACC3C62729C0B30055A212 /* Intents.intentdefinition in Sources */,
 				0960FFC126F9C1410049B01C /* Countdown+Progress.swift in Sources */,
 				09C12CB426F8835E00BD84ED /* Tone.swift in Sources */,
 				09F9D14826FAC95000380D74 /* PersistenceController+Preview.swift in Sources */,
@@ -865,6 +877,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Countdowns;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = Countdowns.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -898,6 +911,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Countdowns;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = Countdowns.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1099,6 +1113,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1131,6 +1146,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1168,6 +1184,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1198,6 +1215,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

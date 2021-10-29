@@ -15,6 +15,7 @@ Calculate time remaining until events on <!-- rOS,  --> iOS and watchOS.
 * View upcoming countdowns in a distraction-free environment
 * Integrates with <!-- widgets on iOS and --> complications on watchOS
 * Available in over 20 languages
+<!-- * Set countdowns using Siri -->
 <!-- * Synchronizes across iOS and watchOS -->
 
 
