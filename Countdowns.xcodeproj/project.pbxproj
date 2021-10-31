@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090E175F272C999000169FD8 /* PrivateAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E175E272C999000169FD8 /* PrivateAPIs.swift */; };
 		0913FD5126FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
 		0913FD5226FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
 		0913FD5326FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
+		09493F27272E0FAD001A826C /* WatchDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 09493F26272E0FAD001A826C /* WatchDatePicker */; };
 		095D00A326FB81D400A0B704 /* Countdown+EffectiveSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */; };
 		095D00A426FB81D400A0B704 /* Countdown+EffectiveSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */; };
 		095D00A526FB81D400A0B704 /* Countdown+EffectiveSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */; };
@@ -176,6 +178,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		090E175E272C999000169FD8 /* PrivateAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateAPIs.swift; sourceTree = "<group>"; };
 		0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+Fetch.swift"; sourceTree = "<group>"; };
 		095BC05D26FF522100684250 /* ComplicationProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationProviders.swift; sourceTree = "<group>"; };
 		095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+EffectiveSource.swift"; sourceTree = "<group>"; };
@@ -290,6 +293,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09493F27272E0FAD001A826C /* WatchDatePicker in Frameworks */,
 				0997145D26F8A7EF00D33AF7 /* Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +343,7 @@
 				09AA659E26FCD6D800BD3F98 /* GaugeStyle+Fill.swift */,
 				0997143B26F8A62400D33AF7 /* Info.plist */,
 				0997142E26F8A62300D33AF7 /* ListView.swift */,
+				090E175E272C999000169FD8 /* PrivateAPIs.swift */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -415,11 +420,11 @@
 				09F9D13726FAB9CD00380D74 /* README.md */,
 				09F9D16B26FAE77200380D74 /* Screenshots */,
 				3B3A1A0426F7D8B600A4504D /* Shared */,
-				0997148526F99E8500D33AF7 /* iOS */,
 				0997142B26F8A62300D33AF7 /* watchOS */,
+				0997148526F99E8500D33AF7 /* iOS */,
 				09F9D14A26FACD4100380D74 /* macOS */,
-				3B3A1A1026F7D8CC00A4504D /* Products */,
 				0997145926F8A7EF00D33AF7 /* Frameworks */,
+				3B3A1A1026F7D8CC00A4504D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -500,6 +505,7 @@
 			name = "Countdowns (watchOS App Extension)";
 			packageProductDependencies = (
 				0997145C26F8A7EF00D33AF7 /* Dynamic */,
+				09493F26272E0FAD001A826C /* WatchDatePicker */,
 			);
 			productName = "Countdowns (watchOS) Extension";
 			productReference = 0997142726F8A62300D33AF7 /* Countdowns.appex */;
@@ -610,6 +616,7 @@
 			packageReferences = (
 				09C12C5826F8155400BD84ED /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				09C12CA526F8637C00BD84ED /* XCRemoteSwiftPackageReference "Dynamic" */,
+				09493F25272E0FAD001A826C /* XCRemoteSwiftPackageReference "watch-date-picker" */,
 			);
 			productRefGroup = 3B3A1A1026F7D8CC00A4504D /* Products */;
 			projectDirPath = "";
@@ -691,6 +698,7 @@
 				0997145026F8A78200D33AF7 /* Countdown+TimeRemaining.swift in Sources */,
 				09EAE32927007C730036F047 /* GraphicRectangular.swift in Sources */,
 				09D6A87E2705FF4300CB11FD /* Countdown+UUIDString.swift in Sources */,
+				090E175F272C999000169FD8 /* PrivateAPIs.swift in Sources */,
 				0997142F26F8A62300D33AF7 /* ListView.swift in Sources */,
 				0997144926F8A78200D33AF7 /* RepeatMode.swift in Sources */,
 				0997144D26F8A78200D33AF7 /* PersistenceController.swift in Sources */,
@@ -876,7 +884,8 @@
 				INFOPLIST_FILE = watchOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Countdowns;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = Countdowns.ComplicationController;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2021 Freya Ariel";
 				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -910,7 +919,8 @@
 				INFOPLIST_FILE = watchOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Countdowns;
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = Countdowns.ComplicationController;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2021 Freya Ariel";
 				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -1107,11 +1117,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WP9Q67QBW2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
 				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1128,6 +1140,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns;
 				PRODUCT_NAME = Countdowns;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1140,11 +1153,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WP9Q67QBW2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
 				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1161,6 +1176,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns;
 				PRODUCT_NAME = Countdowns;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1183,7 +1199,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2021 Freya Ariel";
 				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1214,7 +1232,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2021 Freya Ariel";
 				INFOPLIST_KEY_NSSiriUsageDescription = "Countdowns will be available to Siri.";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1282,6 +1302,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		09493F25272E0FAD001A826C /* XCRemoteSwiftPackageReference "watch-date-picker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freyaariel/watch-date-picker.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		09C12C5826F8155400BD84ED /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
@@ -1301,6 +1329,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		09493F26272E0FAD001A826C /* WatchDatePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09493F25272E0FAD001A826C /* XCRemoteSwiftPackageReference "watch-date-picker" */;
+			productName = WatchDatePicker;
+		};
 		0997145C26F8A7EF00D33AF7 /* Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 09C12CA526F8637C00BD84ED /* XCRemoteSwiftPackageReference "Dynamic" */;

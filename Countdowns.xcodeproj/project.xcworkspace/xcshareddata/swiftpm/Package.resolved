@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/mhdhejazi/Dynamic.git",
         "state": {
           "branch": "master",
-          "revision": "ac8f7530b2c5ea75f9a71a450ceec86d7fbdd862",
+          "revision": "772883073d044bc754d401cabb6574624eb3778f",
           "version": null
         }
       },
@@ -17,6 +17,15 @@
           "branch": null,
           "revision": "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
           "version": "0.1.3"
+        }
+      },
+      {
+        "package": "watch-date-picker",
+        "repositoryURL": "https://github.com/freyaariel/watch-date-picker.git",
+        "state": {
+          "branch": "main",
+          "revision": "7eb37874b83a53f47c7e48d2a14b88f39a2d3208",
+          "version": null
         }
       }
     ]
