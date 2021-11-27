@@ -15,7 +15,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   func complicationDescriptors() async -> [CLKComplicationDescriptor] {
     let fetchRequest = Countdown.fetchRequest()
     fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Countdown.target, ascending: true)]
-    let countdowns = try! PersistenceController.preview.container.viewContext.fetch(fetchRequest)
+    let countdowns = try! PersistenceController.shared.container.viewContext.fetch(fetchRequest)
     
     let staticDescriptors = [
       CLKComplicationDescriptor(

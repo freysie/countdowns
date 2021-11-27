@@ -1,16 +1,33 @@
 import SwiftUI
 import UserNotifications
+import Introspect
+
+extension View {
+  func introspectSplitView(customize: @escaping (NSSplitView) -> ()) -> some View {
+    introspect(selector: TargetViewSelector.siblingContaining, customize: customize)
+  }
+}
 
 @main
 struct CountdownsApp: App {
-  @NSApplicationDelegateAdapator(DelegateAdaptor.self) private var delegateAdaptor
+  @NSApplicationDelegateAdaptor(DelegateAdaptor.self) private var delegateAdaptor
   
   var body: some Scene {
     WindowGroup {
       NavigationView {
+        ListView()
         EmptyView()
       }
-      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+      .frame(minWidth: 500, minHeight: 500)
+      .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+      .introspectSplitView {
+        $0.window?.titlebarAppearsTransparent = true
+        //($0.delegate as? NSSplitViewController)?.splitViewItems.last?.titlebarSeparatorStyle = .none
+      }
+    }
+    .windowToolbarStyle(.unifiedCompact(showsTitle: false))
+    .commands {
+      SidebarCommands()
     }
   }
   
@@ -18,14 +35,16 @@ struct CountdownsApp: App {
     func applicationDidFinishLaunching(_ notification: Notification) {
       UNUserNotificationCenter.current().delegate = self
       UNUserNotificationCenter.configure()
+      
+      // NSApp.setActivationPolicy(.accessory)
+      // NSApp.presentationOptions = .
     }
     
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,
-      willPresent notification: UNNotification,
-      withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
-    ) {
-      completionHandler([.sound, .banner])
+      willPresent notification: UNNotification
+    ) async -> UNNotificationPresentationOptions {
+      [.sound, .banner]
     }
   }
 }

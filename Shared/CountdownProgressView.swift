@@ -25,7 +25,8 @@ struct CountdownProgressView: View {
   var trackColor: Color {
     switch style {
     case .`default`: return Color(white: 0.1)
-    case .complication: return Color(uiColor: .orange.withAlphaComponent(0.5))
+    case .complication: return Color.orange.opacity(0.5)
+//    case .complication: return Color(uiColor: .orange.withAlphaComponent(0.5))
     }
   }
   

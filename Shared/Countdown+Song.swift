@@ -1,7 +1,7 @@
 import CoreData
 import MediaPlayer
 
-#if !os(watchOS)
+#if os(iOS)
 
 extension Countdown {
   var song: MPMediaItem? {

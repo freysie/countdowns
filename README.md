@@ -11,11 +11,11 @@ Calculate time remaining until events on <!-- rOS,  --> iOS and watchOS.
 
 * Notifies you the instant a countdown completes
 * Choose from many built-in alert sounds
-* Repeat mode makes it easy to have weekly, monthly, or even yearly countdowns
 * View upcoming countdowns in a distraction-free environment
 * Integrates with <!-- widgets on iOS and --> complications on watchOS
 * Available in over 20 languages
 <!-- * Set countdowns using Siri -->
+<!-- * Repeat mode makes it easy to have weekly, monthly, or even yearly countdowns -->
 <!-- * Synchronizes across iOS and watchOS -->
 
 
@@ -31,6 +31,20 @@ _Coming soon ✨_
 * Open _Countdowns.xcodeproj_ with Xcode
 * Select **Run (⌘R)**
 
+
+<!--
+## Complications
+
+### Circular Small
+### Graphic Bezel
+### Graphic Circular
+### Graphic Corner
+### Graphic Extra Large
+### Graphic Rectangular
+### Utilitarian Large
+### Utilitarian Small
+
+-->
 
 <!--
 ## Settings

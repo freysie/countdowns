@@ -2,6 +2,8 @@
 "Target" = "Mål";
 "Label" = "Beskrivning";
 "Repeat" = "Upprepa";
+"Sound" = "Ljud";
+"Sound will be played on iPhone." = "Ljud äfspillas på iFon.";
 
 "Never" = "Aldrig";
 "Daily" = "Dagligen";

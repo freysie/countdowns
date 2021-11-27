@@ -14,6 +14,6 @@ extension Countdown {
   }
   
   public override func awakeFromFetch() {
-    target = Calendar.current.date(bySetting: .nanosecond, value: 0, of: target!)!
+    target = Calendar.current.date(bySetting: .nanosecond, value: 0, of: target!) ?? Date()
   }
 }

@@ -14,7 +14,7 @@ struct EditForm: View {
       Section {
         TextField("Label", text: .init($countdown.label)!)
         
-        DatePicker("Target", selection: .constant(countdown.target!), minimumDate: Date(), onCompletion: { countdown.target = $0 })
+        DatePicker("Target", selection: .constant(countdown.target ?? Date()), minimumDate: Date(), onCompletion: { countdown.target = $0 })
         
         Picker("Repeat", selection: $countdown.repeat) {
           ForEach(RepeatMode.allCases) {

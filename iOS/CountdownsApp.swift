@@ -43,11 +43,11 @@ struct CountdownsApp: App {
           NavigationView { ListView() }
         }
       }
-#if targetEnvironment(simulator)
-      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-#else
+//#if targetEnvironment(simulator)
+//      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//#else
       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-#endif
+//#endif
       // .statusBar(hidden: statusBarIsHidden)
       .navigationViewStyle(.stack)
     }
@@ -93,15 +93,16 @@ struct CountdownsApp: App {
       _ center: UNUserNotificationCenter,
       willPresent notification: UNNotification
     ) async -> UNNotificationPresentationOptions {
+      print("Countdown completed")
       return [.sound, .banner]
     }
-    
+
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,
       didReceive response: UNNotificationResponse
     ) async {
       guard let countdownID = response.notification.request.content.userInfo["countdownID"] as? String else { return }
-      
+
       // TODO: only the `selectedUpNextPage` transition should animate, not the countdown progress view
       // withAnimation {
       UserDefaults.standard.set(countdownID, forKey: "selectedUpNextPage")

@@ -6,8 +6,26 @@ struct DetailsView: View {
   @State private var editSheetIsPresented = false
   
   var body: some View {
+    TabView {
+      zStack(progressViewVisible: false, controlsVisible: true)
+      zStack(progressViewVisible: false, controlsVisible: false)
+    }
+    .tabViewStyle(.page(indexDisplayMode: .never))
+    .overlay {
+      zStack(progressViewVisible: true, controlsVisible: false)
+        .allowsHitTesting(false)
+    }
+    .sheet(isPresented: $editSheetIsPresented) {
+      NavigationView {
+        EditForm(countdown: countdown)
+      }
+    }
+  }
+  
+  func zStack(progressViewVisible: Bool, controlsVisible: Bool) -> some View {
     ZStack(alignment: .bottom) {
       CountdownProgressView(countdown: countdown)
+        .opacity(progressViewVisible ? 1 : 0)
       
       HStack {
         Button(action: { editSheetIsPresented = true }) {
@@ -19,11 +37,15 @@ struct DetailsView: View {
       }
       .padding(.bottom, -18)
       .padding(.horizontal, 9)
+      .opacity(controlsVisible ? 1 : 0)
     }
-    .sheet(isPresented: $editSheetIsPresented) {
-      NavigationView {
-        EditForm(countdown: countdown)
-      }
-    }
+//    .toolbar {
+//      ToolbarItem(placement: .confirmationAction) {
+//        //        if !controlsVisible {
+//        Button("", action: {})
+//          .foregroundColor(.clear)
+//        //        }
+//      }
+//    }
   }
 }

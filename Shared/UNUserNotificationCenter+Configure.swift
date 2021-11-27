@@ -19,12 +19,12 @@ extension UNUserNotificationCenter {
           title: "Stop",
           options: []
         ),
-        UNNotificationAction(
-          identifier: NotificationActionIdentifier.stopAndDelete.rawValue,
-          title: "Stop and Delete",
-          options: [.destructive],
-          icon: .init(systemImageName: "trash")
-        )
+//        UNNotificationAction(
+//          identifier: NotificationActionIdentifier.stopAndDelete.rawValue,
+//          title: "Stop and Delete",
+//          options: [.destructive],
+//          icon: .init(systemImageName: "trash")
+//        )
       ]
       
 #if os(watchOS)
@@ -43,15 +43,15 @@ extension UNUserNotificationCenter {
       
       current().removeAllPendingNotificationRequests()
       
-      let countdowns = try! PersistenceController.preview.container.viewContext.fetch(Countdown.fetchRequest())
+      let countdowns = try! PersistenceController.shared.container.viewContext.fetch(Countdown.fetchRequest())
       
       for countdown in countdowns {
-        try! await addRequestFor(countdown: countdown)
+        try! await current().addRequest(for: countdown)
       }
     }
   }
   
-  class func addRequestFor(countdown: Countdown) async throws {
+  func addRequest(for countdown: Countdown) async throws {
     guard countdown.target!.timeIntervalSinceNow > 0 else { return }
     
     let content = UNMutableNotificationContent()
@@ -69,7 +69,8 @@ extension UNUserNotificationCenter {
 #if canImport(AudioServices)
     content.tone = Tone.drums.notificationSound
 #endif
-    
+
+    // TODO: use `UNCalendarNotificationTrigger` instead
     let trigger = UNTimeIntervalNotificationTrigger(
       timeInterval: countdown.target!.timeIntervalSinceNow - 1,
       repeats: false
@@ -81,6 +82,6 @@ extension UNUserNotificationCenter {
       trigger: trigger
     )
     
-    try await current().add(request)
+    try await add(request)
   }
 }

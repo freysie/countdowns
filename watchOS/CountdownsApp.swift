@@ -14,17 +14,17 @@ struct CountdownsApp: App {
       NavigationView {
         ListView()
       }
-#if targetEnvironment(simulator)
-      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-#else
+//#if targetEnvironment(simulator) || DEBUG
+//      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//#else
       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-#endif
+//#endif
     }
   }
   
   class DelegateAdaptor: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate, WCSessionDelegate {
     func applicationDidFinishLaunching() {
-      print(CLKComplicationServer.sharedInstance().activeComplications as Any)
+      // print(CLKComplicationServer.sharedInstance().activeComplications as Any)
       
       UNUserNotificationCenter.current().delegate = self
       UNUserNotificationCenter.configure()

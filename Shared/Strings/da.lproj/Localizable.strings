@@ -41,3 +41,6 @@
 "Songs" = "Sange";
 "Choose a Song" = "Vælg en sang";
 "The song will play when Countdowns is in the foreground." = "Sangen afspilles når Nedtællinger er i forgrunden.";
+
+"Show in Menu Bar" = "Vis på menulinje";
+"Show Countdowns in Dock" = "Vis Nedtællinger i Dock";

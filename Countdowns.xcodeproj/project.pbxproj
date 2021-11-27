@@ -11,7 +11,12 @@
 		0913FD5126FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
 		0913FD5226FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
 		0913FD5326FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
-		09493F27272E0FAD001A826C /* WatchDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 09493F26272E0FAD001A826C /* WatchDatePicker */; };
+		094297682737325600998276 /* WatchDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 094297672737325600998276 /* WatchDatePicker */; };
+		0942976A27373E4A00998276 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942976927373E4A00998276 /* ListView.swift */; };
+		0942976C27373E5600998276 /* EditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942976B27373E5600998276 /* EditForm.swift */; };
+		0942976F27373FDE00998276 /* CountdownListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942976E27373FDE00998276 /* CountdownListItem.swift */; };
+		09429771273756C000998276 /* NSStatusBar+Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09429770273756B300998276 /* NSStatusBar+Countdown.swift */; };
+		095032FE27307C8700993CD2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0997140626F89BB100D33AF7 /* InfoPlist.strings */; };
 		095D00A326FB81D400A0B704 /* Countdown+EffectiveSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */; };
 		095D00A426FB81D400A0B704 /* Countdown+EffectiveSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */; };
 		095D00A526FB81D400A0B704 /* Countdown+EffectiveSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */; };
@@ -99,6 +104,7 @@
 		09EAE32927007C730036F047 /* GraphicRectangular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EAE32827007C730036F047 /* GraphicRectangular.swift */; };
 		09EAE32B27007C800036F047 /* UtilitarianLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EAE32A27007C800036F047 /* UtilitarianLarge.swift */; };
 		09EAE32D270080620036F047 /* GraphicExtraLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EAE32C270080620036F047 /* GraphicExtraLarge.swift */; };
+		09F07B9027307D060040474C /* WatchDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 09F07B8F27307D060040474C /* WatchDatePicker */; };
 		09F7873627039521008A1A68 /* UtilitarianSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7873527039521008A1A68 /* UtilitarianSmall.swift */; };
 		09F9D13F26FAC88400380D74 /* TimelineSchedule+Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9D13E26FAC88400380D74 /* TimelineSchedule+Countdown.swift */; };
 		09F9D14026FAC88400380D74 /* TimelineSchedule+Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9D13E26FAC88400380D74 /* TimelineSchedule+Countdown.swift */; };
@@ -180,6 +186,10 @@
 /* Begin PBXFileReference section */
 		090E175E272C999000169FD8 /* PrivateAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateAPIs.swift; sourceTree = "<group>"; };
 		0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+Fetch.swift"; sourceTree = "<group>"; };
+		0942976927373E4A00998276 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		0942976B27373E5600998276 /* EditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForm.swift; sourceTree = "<group>"; };
+		0942976E27373FDE00998276 /* CountdownListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownListItem.swift; sourceTree = "<group>"; };
+		09429770273756B300998276 /* NSStatusBar+Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStatusBar+Countdown.swift"; sourceTree = "<group>"; };
 		095BC05D26FF522100684250 /* ComplicationProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationProviders.swift; sourceTree = "<group>"; };
 		095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+EffectiveSource.swift"; sourceTree = "<group>"; };
 		095D00A626FB8C2C00A0B704 /* ToneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneStore.swift; sourceTree = "<group>"; };
@@ -293,8 +303,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09493F27272E0FAD001A826C /* WatchDatePicker in Frameworks */,
+				09F07B9027307D060040474C /* WatchDatePicker in Frameworks */,
 				0997145D26F8A7EF00D33AF7 /* Dynamic in Frameworks */,
+				094297682737325600998276 /* WatchDatePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,38 +342,31 @@
 		0997142B26F8A62300D33AF7 /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				0997143626F8A62400D33AF7 /* Assets.xcassets */,
+				0997143B26F8A62400D33AF7 /* Info.plist */,
 				0997147F26F99CA600D33AF7 /* ButtonStyle+Circular.swift */,
 				0997143426F8A62300D33AF7 /* ComplicationController.swift */,
 				095BC05D26FF522100684250 /* ComplicationProviders.swift */,
-				09EAE3192700715F0036F047 /* ComplicationTemplates */,
 				0997146226F8A89800D33AF7 /* CountdownListItem.swift */,
 				0997142C26F8A62300D33AF7 /* CountdownsApp.swift */,
 				0997148126F99D3800D33AF7 /* DetailsView.swift */,
 				0997148326F99D3F00D33AF7 /* EditForm.swift */,
 				09AA659E26FCD6D800BD3F98 /* GaugeStyle+Fill.swift */,
-				0997143B26F8A62400D33AF7 /* Info.plist */,
 				0997142E26F8A62300D33AF7 /* ListView.swift */,
 				090E175E272C999000169FD8 /* PrivateAPIs.swift */,
+				0997143626F8A62400D33AF7 /* Assets.xcassets */,
+				09EAE3192700715F0036F047 /* ComplicationTemplates */,
 			);
 			path = watchOS;
-			sourceTree = "<group>";
-		};
-		0997145926F8A7EF00D33AF7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0997148526F99E8500D33AF7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				09ACC3C92729C1520055A212 /* Info.plist */,
 				09F9D16C26FAF23400380D74 /* ButtonStyle+Buy.swift */,
 				09C12C4F26F8111700BD84ED /* CountdownListItem.swift */,
 				3B3A1A0726F7D8B600A4504D /* CountdownsApp.swift */,
 				3B3A1A2826F7DA1B00A4504D /* EditForm.swift */,
-				09ACC3C92729C1520055A212 /* Info.plist */,
 				09C12C5226F8115A00BD84ED /* ListView.swift */,
 				09C12C5B26F8170400BD84ED /* NavigationLink+Empty.swift */,
 				09F9D16526FAD9A500380D74 /* RepeatModePicker.swift */,
@@ -408,8 +412,12 @@
 		09F9D14A26FACD4100380D74 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				09F9D14B26FACD5000380D74 /* CountdownsApp.swift */,
 				09ACC3C82729C1520055A212 /* Info.plist */,
+				0942976E27373FDE00998276 /* CountdownListItem.swift */,
+				09F9D14B26FACD5000380D74 /* CountdownsApp.swift */,
+				0942976B27373E5600998276 /* EditForm.swift */,
+				0942976927373E4A00998276 /* ListView.swift */,
+				09429770273756B300998276 /* NSStatusBar+Countdown.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -423,7 +431,6 @@
 				0997142B26F8A62300D33AF7 /* watchOS */,
 				0997148526F99E8500D33AF7 /* iOS */,
 				09F9D14A26FACD4100380D74 /* macOS */,
-				0997145926F8A7EF00D33AF7 /* Frameworks */,
 				3B3A1A1026F7D8CC00A4504D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -431,7 +438,8 @@
 		3B3A1A0426F7D8B600A4504D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				3B3A1A0A26F7D8CC00A4504D /* Assets.xcassets */,
+				0997141B26F89F8400D33AF7 /* Settings.bundle */,
+				09ACC3C42729C0B30055A212 /* Intents.intentdefinition */,
 				0960FFC326F9C1D40049B01C /* Countdown+Awake.swift */,
 				095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */,
 				0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */,
@@ -441,20 +449,19 @@
 				09D6A87D2705FEC300CB11FD /* Countdown+UUIDString.swift */,
 				09C12CB826F8873F00BD84ED /* CountdownFormatter.swift */,
 				09C12C5526F8118600BD84ED /* CountdownProgressView.swift */,
-				3B3A1A0526F7D8B600A4504D /* Countdowns.xcdatamodeld */,
-				09ACC3C42729C0B30055A212 /* Intents.intentdefinition */,
 				09D6A8792705E63F00CB11FD /* Optional+RawRepresentableString.swift */,
 				3B3A1A0926F7D8B600A4504D /* PersistenceController.swift */,
 				09F9D14626FAC95000380D74 /* PersistenceController+Preview.swift */,
 				0997147B26F9899500D33AF7 /* PreviewSupport.swift */,
 				09C12C8026F8319E00BD84ED /* RepeatMode.swift */,
-				0997141B26F89F8400D33AF7 /* Settings.bundle */,
-				09C12CA826F882D300BD84ED /* Sounds */,
 				09C12CB526F8862100BD84ED /* String+TitleCased.swift */,
-				0913FD4F26FD709000A28DEA /* Strings */,
 				09F9D13E26FAC88400380D74 /* TimelineSchedule+Countdown.swift */,
 				09C12CB226F8835E00BD84ED /* Tone.swift */,
 				09F9D14D26FACEAD00380D74 /* UNUserNotificationCenter+Configure.swift */,
+				3B3A1A0A26F7D8CC00A4504D /* Assets.xcassets */,
+				3B3A1A0526F7D8B600A4504D /* Countdowns.xcdatamodeld */,
+				09C12CA826F882D300BD84ED /* Sounds */,
+				0913FD4F26FD709000A28DEA /* Strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -501,11 +508,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				09F07B8E27307D010040474C /* PBXTargetDependency */,
 			);
 			name = "Countdowns (watchOS App Extension)";
 			packageProductDependencies = (
 				0997145C26F8A7EF00D33AF7 /* Dynamic */,
-				09493F26272E0FAD001A826C /* WatchDatePicker */,
+				09F07B8F27307D060040474C /* WatchDatePicker */,
+				094297672737325600998276 /* WatchDatePicker */,
 			);
 			productName = "Countdowns (watchOS) Extension";
 			productReference = 0997142726F8A62300D33AF7 /* Countdowns.appex */;
@@ -563,7 +572,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					0997141E26F8A62000D33AF7 = {
 						CreatedOnToolsVersion = 13.0;
@@ -616,7 +625,7 @@
 			packageReferences = (
 				09C12C5826F8155400BD84ED /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				09C12CA526F8637C00BD84ED /* XCRemoteSwiftPackageReference "Dynamic" */,
-				09493F25272E0FAD001A826C /* XCRemoteSwiftPackageReference "watch-date-picker" */,
+				094297662737325600998276 /* XCRemoteSwiftPackageReference "watch-date-picker" */,
 			);
 			productRefGroup = 3B3A1A1026F7D8CC00A4504D /* Products */;
 			projectDirPath = "";
@@ -636,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09AA659926FC8A9000BD3F98 /* Assets.xcassets in Resources */,
+				095032FE27307C8700993CD2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,9 +795,11 @@
 				0913FD5226FD71F400A28DEA /* Countdown+Fetch.swift in Sources */,
 				09F9D14026FAC88400380D74 /* TimelineSchedule+Countdown.swift in Sources */,
 				0997140026F899A500D33AF7 /* Countdown+TimeRemaining.swift in Sources */,
+				0942976A27373E4A00998276 /* ListView.swift in Sources */,
 				09D6A87F2705FF4400CB11FD /* Countdown+UUIDString.swift in Sources */,
 				095D00A426FB81D400A0B704 /* Countdown+EffectiveSource.swift in Sources */,
 				09C12CBA26F8873F00BD84ED /* CountdownFormatter.swift in Sources */,
+				09429771273756C000998276 /* NSStatusBar+Countdown.swift in Sources */,
 				3B3A1A1726F7D8CC00A4504D /* Countdowns.xcdatamodeld in Sources */,
 				09D6A8772705BEE100CB11FD /* Countdown+Song.swift in Sources */,
 				3B3A1A1D26F7D8CC00A4504D /* PersistenceController.swift in Sources */,
@@ -795,8 +807,10 @@
 				0960FFC526F9C1D40049B01C /* Countdown+Awake.swift in Sources */,
 				09C12C5726F8118600BD84ED /* CountdownProgressView.swift in Sources */,
 				09F9D14C26FACD6000380D74 /* CountdownsApp.swift in Sources */,
+				0942976C27373E5600998276 /* EditForm.swift in Sources */,
 				0997147D26F9899500D33AF7 /* PreviewSupport.swift in Sources */,
 				09D6A87B2705E63F00CB11FD /* Optional+RawRepresentableString.swift in Sources */,
+				0942976F27373FDE00998276 /* CountdownListItem.swift in Sources */,
 				09C12C8226F8319E00BD84ED /* RepeatMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -813,6 +827,10 @@
 			isa = PBXTargetDependency;
 			target = 0997141E26F8A62000D33AF7 /* Countdowns (watchOS) */;
 			targetProxy = 0997143D26F8A62400D33AF7 /* PBXContainerItemProxy */;
+		};
+		09F07B8E27307D010040474C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 09F07B8D27307D010040474C /* WatchDatePicker */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1001,6 +1019,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1062,6 +1081,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1190,6 +1210,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1223,6 +1244,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1302,7 +1324,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		09493F25272E0FAD001A826C /* XCRemoteSwiftPackageReference "watch-date-picker" */ = {
+		094297662737325600998276 /* XCRemoteSwiftPackageReference "watch-date-picker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freyaariel/watch-date-picker.git";
 			requirement = {
@@ -1329,9 +1351,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		09493F26272E0FAD001A826C /* WatchDatePicker */ = {
+		094297672737325600998276 /* WatchDatePicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09493F25272E0FAD001A826C /* XCRemoteSwiftPackageReference "watch-date-picker" */;
+			package = 094297662737325600998276 /* XCRemoteSwiftPackageReference "watch-date-picker" */;
 			productName = WatchDatePicker;
 		};
 		0997145C26F8A7EF00D33AF7 /* Dynamic */ = {
@@ -1358,6 +1380,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09C12CA526F8637C00BD84ED /* XCRemoteSwiftPackageReference "Dynamic" */;
 			productName = Dynamic;
+		};
+		09F07B8D27307D010040474C /* WatchDatePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WatchDatePicker;
+		};
+		09F07B8F27307D060040474C /* WatchDatePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WatchDatePicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 

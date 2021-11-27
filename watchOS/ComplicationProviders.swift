@@ -25,10 +25,18 @@ extension CLKTextProvider {
       if permitsUsageOfPrivateAPIs {
         Dynamic(relativeDateTextProvider).wantsSubseconds = wantsSubseconds
       }
-      let remainderHours = (relativeTimeInterval / (60 * 60)).remainder(dividingBy: 24)
+      let remainderHours = abs((relativeTimeInterval / (60 * 60)).remainder(dividingBy: 24))
       let hourZeroPadding = remainderHours < 10 && !wantsSubseconds ? "0" : ""
-      let textProvider = CLKSimpleTextProvider(format: "\(targetDays):\(hourZeroPadding)%@", relativeDateTextProvider)
+      print("remainderHours = \(remainderHours)")
+      let timeSeparator = DateComponentsFormatter()
+        .string(from: DateComponents(minute: 10, second: 10))!
+        .replacingOccurrences(of: "10", with: "")
+      let textProvider = CLKSimpleTextProvider(
+        format: "\(targetDays)\(timeSeparator)\(hourZeroPadding)%@",
+        relativeDateTextProvider
+      )
       textProvider.tintColor = .init(.accentColor)
+      textProvider.tintColor = .init(.pink)
       return textProvider
     }
   }
