@@ -13,7 +13,8 @@ extension CLKTextProvider {
       )
     } else {
       let wantsSubseconds = false
-      let relativeTimeInterval = countdown.target!.timeIntervalSince(relativeDate ?? Date())
+      let relativeTimeInterval = countdown.target!.timeIntervalSince(relativeDate ?? date)
+      // let targetHours = Int(relativeTimeInterval / (60 * 60))
       let targetDays = Int(relativeTimeInterval / (60 * 60 * 24))
       let targetDate = Calendar.current.date(byAdding: .day, value: -targetDays, to: countdown.target!)!
       let relativeDateTextProvider = CLKRelativeDateTextProvider(
@@ -27,7 +28,7 @@ extension CLKTextProvider {
       }
       let remainderHours = abs((relativeTimeInterval / (60 * 60)).remainder(dividingBy: 24))
       let hourZeroPadding = remainderHours < 10 && !wantsSubseconds ? "0" : ""
-      print("remainderHours = \(remainderHours)")
+      print("date = \(date); remainderHours = \(remainderHours)")
       let timeSeparator = DateComponentsFormatter()
         .string(from: DateComponents(minute: 10, second: 10))!
         .replacingOccurrences(of: "10", with: "")

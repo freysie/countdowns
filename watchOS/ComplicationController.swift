@@ -52,16 +52,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   
   // MARK: - Timeline Configuration
   
-//  func timelineEndDate(for complication: CLKComplication) async -> Date? {
-//    .distantFuture
-//  }
+  func timelineEndDate(for complication: CLKComplication) async -> Date? {
+    .distantFuture
+  }
   
   func privacyBehavior(for complication: CLKComplication) async -> CLKComplicationPrivacyBehavior {
     .showOnLockScreen
   }
   
   func alwaysOnTemplate(for complication: CLKComplication) async -> CLKComplicationTemplate? {
-    timelineEntry(for: complication, date: Date(), alwaysOn: true)?.complicationTemplate
+    timelineEntry(for: complication, date: Date.thisMinute, alwaysOn: true)?.complicationTemplate
   }
   
   // MARK: - Timeline Population
@@ -95,23 +95,34 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   }
   
   func currentTimelineEntry(for complication: CLKComplication) async -> CLKComplicationTimelineEntry? {
-    timelineEntry(for: complication, date: Date())
+    timelineEntry(for: complication, date: Date.thisMinute)
   }
   
-//  func timelineEntries(for complication: CLKComplication, after date: Date, limit: Int) async -> [CLKComplicationTimelineEntry]? {
-//    print((date.timeIntervalSinceReferenceDate, limit))
-//
-//    let entries = (1..<limit).compactMap { index in
-//      timelineEntry(for: complication, date: date.advanced(by: TimeInterval(index * 60)))
-//    }
-//
-//    // print(entries)
-//    return entries
-//  }
+  /// In order to have correct zero padding, we have a timeline entry for every minute.
+  /// This could perhaps be optimized to only create entries for cases with zero padding changes, but is it worth it?
+  func timelineEntries(for complication: CLKComplication, after date: Date, limit: Int) async -> [CLKComplicationTimelineEntry]? {
+    // print((date.timeIntervalSinceReferenceDate, limit))
+
+    let entries = (1..<limit).compactMap { index in
+      timelineEntry(for: complication, date: date.advanced(by: TimeInterval(index * 60)))
+    }
+
+    // print(entries)
+    return entries
+  }
   
   // MARK: - Sample Templates
   
   func localizableSampleTemplate(for complication: CLKComplication) async -> CLKComplicationTemplate? {
-    timelineEntry(for: complication, date: Date())?.complicationTemplate
+    timelineEntry(for: complication, date: Date.thisMinute)?.complicationTemplate
+  }
+}
+
+extension Date {
+  static var thisMinute: Self {
+    var now = Date()
+    now = Calendar.current.date(bySetting: .nanosecond, value: 0, of: now)!
+    now = Calendar.current.date(bySetting: .second, value: 0, of: now)!
+    return now
   }
 }

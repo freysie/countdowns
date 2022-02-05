@@ -54,10 +54,8 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Countdowns">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0997141E26F8A62000D33AF7"
@@ -65,7 +63,7 @@
             BlueprintName = "Countdowns (watchOS)"
             ReferencedContainer = "container:Countdowns.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "CG_NUMERICS_SHOW_BACKTRACE"
@@ -80,10 +78,8 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Countdowns">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0997141E26F8A62000D33AF7"
@@ -91,16 +87,7 @@
             BlueprintName = "Countdowns (watchOS)"
             ReferencedContainer = "container:Countdowns.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0997141E26F8A62000D33AF7"
-            BuildableName = "Countdowns.app"
-            BlueprintName = "Countdowns (watchOS)"
-            ReferencedContainer = "container:Countdowns.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

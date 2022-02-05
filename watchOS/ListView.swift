@@ -34,9 +34,8 @@ struct ListView: View {
       .padding(.bottom, 15)
     }
     .sheet(isPresented: $addSheetIsPresented) {
-      NavigationView {
-        EditForm(countdown: Countdown(entity: Countdown.entity(), insertInto: nil))
-      }
+      // PersistenceController.shared.container.newBackgroundContext() ?
+      EditForm(countdown: Countdown(entity: Countdown.entity(), insertInto: nil))
     }
   }
 }

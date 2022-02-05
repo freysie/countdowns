@@ -23,9 +23,9 @@
         "package": "watch-date-picker",
         "repositoryURL": "https://github.com/freyaariel/watch-date-picker.git",
         "state": {
-          "branch": "main",
-          "revision": "dfed12afa680c2a41d6bf73c347f1a2241794f41",
-          "version": null
+          "branch": null,
+          "revision": "a04568af1c4d63c31439ebfd3e8da4b00d6dcce9",
+          "version": "0.1.0"
         }
       }
     ]

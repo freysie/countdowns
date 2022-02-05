@@ -10,44 +10,47 @@ struct EditForm: View {
   @Environment(\.managedObjectContext) private var viewContext
   
   var body: some View {
-    Form {
-      Section {
-        TextField("Label", text: .init($countdown.label)!)
+    NavigationView {
+      Form {
+        Section {
+          TextField("Label", text: .init($countdown.label)!)
+          
+          DatePicker("Target", selection: .constant(countdown.target ?? Date()), minimumDate: Date(), onCompletion: { countdown.target = $0 })
+          
+          Picker("Repeat", selection: $countdown.repeat) {
+            ForEach(RepeatMode.allCases) {
+              Text(LocalizedStringKey($0.rawValue.capitalized))
+                .tag($0)
+            }
+          }
+          
+          // TODO: reenable this when sync works:
+          // Picker("Sound", selection: $countdown.tone) {
+          //   ForEach(Tone.allCases) {
+          //     Text(LocalizedStringKey($0.rawValue.titleCased))
+          //       .tag($0)
+          //   }
+          // }
+        // } footer: {
+          // if countdown.tone != .none {
+          //   Text("Sound will be played on iPhone.")
+          //     .padding(.top, 1)
+          // }
+        }
         
-        DatePicker("Target", selection: .constant(countdown.target ?? Date()), minimumDate: Date(), onCompletion: { countdown.target = $0 })
+        Section { EmptyView() }
         
-        Picker("Repeat", selection: $countdown.repeat) {
-          ForEach(RepeatMode.allCases) {
-            Text(LocalizedStringKey($0.rawValue.capitalized))
-              .tag($0)
+        Section {
+          Button(role: .destructive, action: { deleteConfirmationIsPresented = true }) {
+            Text("Delete")
+              .frame(maxWidth: .infinity)
           }
         }
-        
-        Picker("Sound", selection: $countdown.tone) {
-          ForEach(Tone.allCases) {
-            Text(LocalizedStringKey($0.rawValue.titleCased))
-              .tag($0)
-          }
-        }
-      } footer: {
-        if countdown.tone != .none {
-          Text("Sound will be played on iPhone.")
-            .padding(.top, 1)
-        }
       }
-      
-      Section { EmptyView() }
-      
-      Section {
-        Button(role: .destructive, action: { deleteConfirmationIsPresented = true }) {
-          Text("Delete")
-            .frame(maxWidth: .infinity)
+      .toolbar {
+        ToolbarItem(placement: .confirmationAction) {
+          Button("Save", action: save)
         }
-      }
-    }
-    .toolbar {
-      ToolbarItem(placement: .confirmationAction) {
-        Button("Save", action: save)
       }
     }
     .confirmationDialog(

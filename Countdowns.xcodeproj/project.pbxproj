@@ -1328,8 +1328,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freyaariel/watch-date-picker.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
 			};
 		};
 		09C12C5826F8155400BD84ED /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {

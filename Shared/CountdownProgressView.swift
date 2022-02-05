@@ -1,6 +1,6 @@
 import SwiftUI
 
-// FIXME: consider breaking this out into three distinct structs
+// FIXME: consider breaking this out into three distinct structs, one for each platform
 struct CountdownProgressView: View {
 #if os(iOS) || os(macOS)
   static var defaultLineWidth: Double { 8 }
