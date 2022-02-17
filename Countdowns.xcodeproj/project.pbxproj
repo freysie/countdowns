@@ -139,6 +139,9 @@
 		3B3A1A1E26F7D8CC00A4504D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A1A0A26F7D8CC00A4504D /* Assets.xcassets */; };
 		3B3A1A1F26F7D8CC00A4504D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A1A0A26F7D8CC00A4504D /* Assets.xcassets */; };
 		3B3A1A2926F7DA1B00A4504D /* EditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A1A2826F7DA1B00A4504D /* EditForm.swift */; };
+		3B9485FF27BDDD7D00644483 /* Optional+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */; };
+		3B94860027BDDD7E00644483 /* Optional+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */; };
+		3B94860127BDDD7E00644483 /* Optional+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +299,7 @@
 		3B3A1A0F26F7D8CC00A4504D /* Countdowns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdowns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3A1A1526F7D8CC00A4504D /* Countdowns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdowns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3A1A2826F7DA1B00A4504D /* EditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForm.swift; sourceTree = "<group>"; };
+		3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+NilIfEmpty.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +453,7 @@
 				09D6A87D2705FEC300CB11FD /* Countdown+UUIDString.swift */,
 				09C12CB826F8873F00BD84ED /* CountdownFormatter.swift */,
 				09C12C5526F8118600BD84ED /* CountdownProgressView.swift */,
+				3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */,
 				09D6A8792705E63F00CB11FD /* Optional+RawRepresentableString.swift */,
 				3B3A1A0926F7D8B600A4504D /* PersistenceController.swift */,
 				09F9D14626FAC95000380D74 /* PersistenceController+Preview.swift */,
@@ -701,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B9485FF27BDDD7D00644483 /* Optional+NilIfEmpty.swift in Sources */,
 				0997148226F99D3800D33AF7 /* DetailsView.swift in Sources */,
 				09ACC3C72729C0B30055A212 /* Intents.intentdefinition in Sources */,
 				0913FD5326FD71F400A28DEA /* Countdown+Fetch.swift in Sources */,
@@ -767,6 +773,7 @@
 				09F9D14E26FACEAD00380D74 /* UNUserNotificationCenter+Configure.swift in Sources */,
 				09C12C5C26F8170400BD84ED /* NavigationLink+Empty.swift in Sources */,
 				3B3A1A1C26F7D8CC00A4504D /* PersistenceController.swift in Sources */,
+				3B94860127BDDD7E00644483 /* Optional+NilIfEmpty.swift in Sources */,
 				09F9D13F26FAC88400380D74 /* TimelineSchedule+Countdown.swift in Sources */,
 				09F9D14726FAC95000380D74 /* PersistenceController+Preview.swift in Sources */,
 				099713FC26F8978200D33AF7 /* UpNextView.swift in Sources */,
@@ -787,6 +794,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B94860027BDDD7E00644483 /* Optional+NilIfEmpty.swift in Sources */,
 				09ACC3C62729C0B30055A212 /* Intents.intentdefinition in Sources */,
 				0960FFC126F9C1410049B01C /* Countdown+Progress.swift in Sources */,
 				09C12CB426F8835E00BD84ED /* Tone.swift in Sources */,

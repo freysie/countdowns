@@ -17,7 +17,8 @@ struct EditForm: View {
           
           DatePicker("Target", selection: .constant(countdown.target ?? Date()), minimumDate: Date(), onCompletion: { countdown.target = $0 })
           
-          Picker("Repeat", selection: $countdown.repeat) {
+          // FIXME: why is this `objectWillChange.send()` needed?!
+          Picker("Repeat", selection: Binding { countdown.repeat } set: { countdown.objectWillChange.send(); countdown.repeat = $0 }) {
             ForEach(RepeatMode.allCases) {
               Text(LocalizedStringKey($0.rawValue.capitalized))
                 .tag($0)
@@ -38,16 +39,21 @@ struct EditForm: View {
           // }
         }
         
-        Section { EmptyView() }
-        
-        Section {
-          Button(role: .destructive, action: { deleteConfirmationIsPresented = true }) {
-            Text("Delete")
-              .frame(maxWidth: .infinity)
+        if countdown.managedObjectContext != nil {
+          Section { EmptyView() }
+          
+          Section {
+            Button(role: .destructive, action: { deleteConfirmationIsPresented = true }) {
+              Text("Delete")
+                .frame(maxWidth: .infinity)
+            }
           }
         }
       }
       .toolbar {
+        ToolbarItem(placement: .cancellationAction) {
+          Button("Cancel", action: cancel)
+        }
         ToolbarItem(placement: .confirmationAction) {
           Button("Save", action: save)
         }
@@ -68,6 +74,11 @@ struct EditForm: View {
     dismiss()
   }
   
+  private func cancel() {
+    viewContext.rollback()
+    dismiss()
+  }
+  
   private func save() {
     countdown.objectWillChange.send()
     
@@ -84,8 +95,6 @@ struct EditForm: View {
     }
   }
 }
-
-import Dynamic
 
 struct EditForm_Previews: PreviewProvider {
   static var previews: some View {

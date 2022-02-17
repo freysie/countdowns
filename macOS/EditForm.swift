@@ -50,7 +50,7 @@ struct EditForm: View {
     //.navigationTitle(countdown.managedObjectContext == nil ? "Add Countdown" : "Edit Countdown")
     .toolbar {
       ToolbarItemGroup(placement: .cancellationAction) {
-        Button("Cancel", role: .cancel, action: { dismiss() })
+        Button("Cancel", role: .cancel, action: cancel)
       }
       
       ToolbarItemGroup(placement: .confirmationAction) {
@@ -61,6 +61,11 @@ struct EditForm: View {
     .onDisappear {
       Tone.stopPreview()
     }
+  }
+  
+  private func cancel() {
+    viewContext.rollback()
+    dismiss()
   }
   
   private func save() {

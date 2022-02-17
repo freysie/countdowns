@@ -13,7 +13,7 @@ extension CLKComplicationTemplate {
       VStack(alignment: .leading) {
         Group {
           Label {
-            Text(countdown.label ?? NSLocalizedString("Countdown", comment: ""))
+            Text(countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""))
               .font(.system(.title3, design: .rounded).weight(.bold).monospacedDigit())
             // .font(.system(size: 18, weight: .bold, design: .rounded).monospacedDigit())
             // .kerning(-0.1)
@@ -72,7 +72,7 @@ struct GraphicRectangular_Previews: PreviewProvider {
 //      return .init(date: date, complicationTemplate: CLKComplicationTemplateGraphicRectangularTextGaugeView(
 //        headerLabel: Label {
 //          Text("ddddddd")
-////          Text(countdown.label ?? NSLocalizedString("Countdown", comment: ""))
+////          Text(countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""))
 ////            .monospacedDigit()
 ////            .fontWeight(.semibold)
 ////            .foregroundColor(.accentColor)
@@ -84,7 +84,7 @@ struct GraphicRectangular_Previews: PreviewProvider {
 //            .symbolRenderingMode(.multicolor)
 //        }
 //          .foregroundColor(.accentColor),
-//        headerTextProvider: CLKSimpleTextProvider(text: countdown.label ?? NSLocalizedString("Countdown", comment: "")),
+//        headerTextProvider: CLKSimpleTextProvider(text: countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: "")),
 //        bodyTextProvider: CLKSimpleTextProvider(text: CountdownFormatter.string(for: countdown, relativeTo: date)),
 //        gaugeProvider: CLKSimpleGaugeProvider(
 //          style: .fill,

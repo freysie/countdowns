@@ -13,7 +13,7 @@ struct CountdownListItem: View {
           .minimumScaleFactor(0.5)
           .foregroundStyle(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? .primary : .tertiary)
         
-        Text(countdown.label ?? NSLocalizedString("Countdown", comment: ""))
+        Text(countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""))
           .foregroundColor(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? .secondary : .accentColor)
       }
     }

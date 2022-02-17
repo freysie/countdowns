@@ -27,7 +27,6 @@ struct PersistenceController {
       let countdowns = try! container.viewContext.fetch(Countdown.fetchRequest()) as [Countdown]
       for countdown in countdowns {
         if countdown.shownInMenuBar {
-          print(countdown)
           await MainActor.run {
             _ = NSStatusBar.system.addStatusItem(for: countdown)
           }
@@ -37,7 +36,7 @@ struct PersistenceController {
 #endif
     
     NotificationCenter.default.addObserver(
-      forName: .NSManagedObjectContextObjectsDidChange,
+      forName: NSManagedObjectContext.didChangeObjectsNotification,
       object: container.viewContext,
       queue: nil
     ) { notification in
@@ -48,7 +47,6 @@ struct PersistenceController {
         
         Task.detached(priority: .userInitiated) {
           for countdown in insertedCountdowns {
-            print(countdown)
             try! await UNUserNotificationCenter.current().addRequest(for: countdown)
           }
         }
@@ -78,7 +76,6 @@ struct PersistenceController {
         
         Task.detached(priority: .userInitiated) {
           for countdown in updatedCountdowns {
-            print(countdown)
             try! await UNUserNotificationCenter.current().addRequest(for: countdown)
           }
         }
@@ -89,7 +86,6 @@ struct PersistenceController {
         CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()
 #endif
         
-        print(deletedCountdowns)
         UNUserNotificationCenter.current().removePendingNotificationRequests(
           withIdentifiers: deletedCountdowns.map { $0.uuidString }
         )

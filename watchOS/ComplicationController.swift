@@ -28,12 +28,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     let countdownDescriptors = countdowns.map { countdown in
       CLKComplicationDescriptor(
         identifier: countdown.objectID.uriRepresentation().absoluteString,
-        displayName: countdown.label ?? NSLocalizedString("Countdown", comment: ""),
+        displayName: countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""),
         // TODO: decide exactly which complication families to support
         supportedFamilies: CLKComplicationFamily.allCases,
         userActivity: {
           let activity = NSUserActivity(activityType: UserActivityType.viewing.rawValue)
-          activity.title = countdown.label ?? NSLocalizedString("Countdown", comment: "")
+          activity.title = countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: "")
           activity.userInfo = [
             "countdownID": countdown.uuidString,
             "countdownObjectID": countdown.objectID.uriRepresentation().absoluteString,

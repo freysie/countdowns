@@ -23,7 +23,7 @@ struct SoundPicker: View {
         Section(LocalizedStringKey("Store")) {
           Button("Tone Store", action: { toneStoreIsPresented = true })
             .onAppear {
-              print(SKPaymentQueue.canMakePayments())
+              print(AppStore.canMakePayments)
             }
         }
       }

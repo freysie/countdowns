@@ -1,7 +1,7 @@
 import SwiftUI
 import Introspect
 
-// TODO: use nested managed object contexts
+// TODO: use nested managed object contexts?
 struct EditForm: View {
   @ObservedObject var countdown: Countdown
   
@@ -63,7 +63,7 @@ struct EditForm: View {
     .navigationBarTitleDisplayMode(.inline)
     .toolbar {
       ToolbarItemGroup(placement: .cancellationAction) {
-        Button("Cancel", role: .cancel, action: { dismiss() })
+        Button("Cancel", role: .cancel, action: cancel)
       }
       
       ToolbarItemGroup(placement: .confirmationAction) {
@@ -79,6 +79,11 @@ struct EditForm: View {
       Button("Delete Countdown", role: .destructive, action: delete)
       Button("Cancel", role: .cancel, action: { deleteConfirmationIsPresented = false })
     }
+  }
+  
+  private func cancel() {
+    viewContext.rollback()
+    dismiss()
   }
   
   private func save() {

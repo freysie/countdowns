@@ -79,7 +79,7 @@ struct CountdownProgressView: View {
   }
   
   func label(relativeTo date: Date) -> some View {
-    Text(countdown.label ?? NSLocalizedString("Countdown", comment: ""))
+    Text(countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""))
 //    Text("\(countdown.progress.relativeTo(date))")
 #if os(iOS) || os(macOS)
       .font(.system(size: 21))

@@ -1,7 +1,5 @@
 import SwiftUI
-import MusicKit
 import UserNotifications
-import WatchConnectivity
 import Introspect
 import Intents
 
@@ -13,7 +11,7 @@ struct CountdownsApp: App {
   @UIApplicationDelegateAdaptor(DelegateAdaptor.self) private var delegateAdaptor
   
   @AppStorage("upNextIsEnabled") private var upNextIsEnabled = true
-  // @AppStorage("statusBarIsHidden") private var statusBarIsHidden = false
+  @AppStorage("statusBarIsHidden") private var statusBarIsHidden = false
   
   enum Tab: String { case list, upNext }
   @AppStorage("selectedTab") private var selectedTab = Tab.list
@@ -48,12 +46,12 @@ struct CountdownsApp: App {
 //#else
       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 //#endif
-      // .statusBar(hidden: statusBarIsHidden)
       .navigationViewStyle(.stack)
+      .statusBar(hidden: statusBarIsHidden)
     }
   }
   
-  class DelegateAdaptor: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, WCSessionDelegate {
+  class DelegateAdaptor: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(
       _ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
@@ -66,16 +64,6 @@ struct CountdownsApp: App {
       
       UNUserNotificationCenter.current().delegate = self
       UNUserNotificationCenter.configure()
-      
-//      Task.detached {
-//        print(MusicAuthorization.currentStatus)
-//        _ = await MusicAuthorization.request()
-//      }
-      
-      if WCSession.isSupported() {
-        WCSession.default.delegate = self
-        WCSession.default.activate()
-      }
       
       return true
     }
@@ -93,8 +81,7 @@ struct CountdownsApp: App {
       _ center: UNUserNotificationCenter,
       willPresent notification: UNNotification
     ) async -> UNNotificationPresentationOptions {
-      print("Countdown completed")
-      return [.sound, .banner]
+      [.sound, .banner]
     }
 
     func userNotificationCenter(
@@ -108,33 +95,6 @@ struct CountdownsApp: App {
       UserDefaults.standard.set(countdownID, forKey: "selectedUpNextPage")
       UserDefaults.standard.set(Tab.upNext.rawValue, forKey: "selectedTab")
       // }
-    }
-    
-    func session(
-      _ session: WCSession,
-      activationDidCompleteWith activationState: WCSessionActivationState,
-      error: Error?
-    ) {
-//      print("activationDidCompleteWith \(activationState.rawValue), error: \(error as Any)")
-      
-//      let countdowns = try! PersistenceController.preview.container.viewContext.fetch(Countdown.fetchRequest())
-//      for countdown in countdowns {
-//        session.sendMessage(
-//          ["countdown": countdown.dictionaryWithValues(
-//            forKeys: ["label", "target", "repeatValue", "toneValue"]
-//          )],
-//          replyHandler: nil,
-//          errorHandler: nil
-//        )
-//      }
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-      
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-      
     }
   }
 }

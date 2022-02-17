@@ -5,7 +5,7 @@ struct UpNextView: View {
   private var countdowns: FetchedResults<Countdown>
   
   @AppStorage("selectedUpNextPage") private var selectedPage: String?
-  // @AppStorage("statusBarIsHidden") private var statusBarIsHidden = false
+  @AppStorage("statusBarIsHidden") private var statusBarIsHidden = false
   
   var body: some View {
     if countdowns.isEmpty {
@@ -22,15 +22,13 @@ struct UpNextView: View {
       }
       .tabViewStyle(.page(indexDisplayMode: .never))
       .background(.background)
-      // .statusBar(hidden: tabBarController?.isTabBarHidden ?? false)
       .onTapGesture {
         guard !countdowns.isEmpty, let tabBarController = tabBarController else { return }
         // tabBarController.prefersStatusBarHidden = true
-        // UIApplication.shared.isStatusBarHidden.toggle()
         // tabBarController.tabBar.window?.windowScene?.statusBarManager?
         tabBarController.setTabBarHidden(!tabBarController.isTabBarHidden, animated: true)
-        // statusBarIsHidden = tabBarController.isTabBarHidden
         UIApplication.shared.isIdleTimerDisabled = tabBarController.isTabBarHidden
+        // statusBarIsHidden = tabBarController.isTabBarHidden
       }
     }
   }
