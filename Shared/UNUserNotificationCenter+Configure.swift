@@ -3,12 +3,11 @@ import UserNotifications
 enum NotificationCategoryIdentifier: String { case countdownCompleted }
 enum NotificationActionIdentifier: String { case stop, stopAndDelete }
 
-// TODO: add/update/remove requests when adding/editing/deleting countdowns
 extension UNUserNotificationCenter {
-  class func configure() {
-    Task.detached {
+  func configure() {
+    Task.detached { [self] in
       do {
-        try await current().requestAuthorization(options: [.badge, .sound, .alert])
+        try await requestAuthorization(options: [.badge, .sound, .alert])
       } catch {
         print(error)
       }
@@ -31,7 +30,7 @@ extension UNUserNotificationCenter {
       actions.removeFirst()
 #endif
       
-      current().setNotificationCategories([
+      setNotificationCategories([
         .init(
           identifier: NotificationCategoryIdentifier.countdownCompleted.rawValue,
           actions: actions,
@@ -41,12 +40,12 @@ extension UNUserNotificationCenter {
         )
       ])
       
-      current().removeAllPendingNotificationRequests()
+      removeAllPendingNotificationRequests()
       
       let countdowns = try! PersistenceController.shared.container.viewContext.fetch(Countdown.fetchRequest())
       
       for countdown in countdowns {
-        try! await current().addRequest(for: countdown)
+        try! await addRequest(for: countdown)
       }
     }
   }
@@ -67,10 +66,18 @@ extension UNUserNotificationCenter {
 #endif
     
 #if canImport(AudioServices)
-    content.tone = Tone.drums.notificationSound
+    if countdown.tone != .none {
+      content.tone = countdown.tone.notificationSound
+    }
 #endif
 
     // TODO: use `UNCalendarNotificationTrigger` instead
+    
+    // UNCalendarNotificationTrigger(
+    //   dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: countdown.target!),
+    //   repeats: false
+    // )
+    
     let trigger = UNTimeIntervalNotificationTrigger(
       timeInterval: countdown.target!.timeIntervalSinceNow - 1,
       repeats: false

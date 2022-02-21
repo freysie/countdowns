@@ -34,7 +34,7 @@ struct CountdownsApp: App {
   class DelegateAdaptor: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
       UNUserNotificationCenter.current().delegate = self
-      UNUserNotificationCenter.configure()
+      UNUserNotificationCenter.current().configure()
       
       // NSApp.setActivationPolicy(.accessory)
       // NSApp.presentationOptions = .

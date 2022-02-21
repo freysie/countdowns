@@ -26,7 +26,7 @@ struct CountdownsApp: App {
       // print(CLKComplicationServer.sharedInstance().activeComplications as Any)
       
       UNUserNotificationCenter.current().delegate = self
-      UNUserNotificationCenter.configure()
+      UNUserNotificationCenter.current().configure()
     }
     
     func handle(_ userActivity: NSUserActivity) {

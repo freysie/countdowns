@@ -63,7 +63,7 @@ struct CountdownsApp: App {
 //      }
       
       UNUserNotificationCenter.current().delegate = self
-      UNUserNotificationCenter.configure()
+      UNUserNotificationCenter.current().configure()
       
       return true
     }
