@@ -7,12 +7,12 @@ extension PersistenceController {
     let controller = Self(inMemory: true)
     let viewContext = controller.container.viewContext
     
-    do {
-      let item = Countdown(context: viewContext)
-      item.id = UUID()
-      item.target = Date().addingTimeInterval(5)
-      item.label = "Testing, testing, 1, 2, 3…"
-    }
+//    do {
+//      let item = Countdown(context: viewContext)
+//      item.id = UUID()
+//      item.target = Date().addingTimeInterval(5)
+//      item.label = "Testing, testing, 1, 2, 3…"
+//    }
     
 //    do {
 //      let item = Countdown(context: viewContext)
@@ -35,7 +35,7 @@ extension PersistenceController {
     do {
       let item = Countdown(context: viewContext)
       item.id = UUID(uuidString: "53C293BC-CB3C-47DB-8E24-B5E187861060")!
-      item.target = try! Date("2021-12-24T00:00:00Z", strategy: .iso8601)
+      item.target = try! Date("2022-12-24T00:00:00Z", strategy: .iso8601)
       item.label = "☃️🎄🎉"
       item.repeat = .yearly
     }
@@ -68,16 +68,6 @@ extension PersistenceController {
   static var screenshots: Self = {
     let controller = Self(inMemory: true)
     let viewContext = controller.container.viewContext
-    
-    do {
-      let item = Countdown(context: viewContext)
-      item.id = UUID(uuidString: "E960F154-236B-44BD-AF9D-70F7FBEDF029")!
-//      item.target = try! Date("2021-09-24T14:00:00Z", strategy: .iso8601)
-      item.target = Calendar.current.date(bySetting: .hour, value: 5, of: Calendar.current.date(bySetting: .weekday, value: 5, of: previewDate)!)!
-      item.label = "Friday, 5 pm"
-      item.repeat = .weekly
-      item.tone = .guitar
-    }
     
     do {
       let item = Countdown(context: viewContext)

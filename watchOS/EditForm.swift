@@ -15,7 +15,7 @@ struct EditForm: View {
         Section {
           TextField("Label", text: .init($countdown.label)!)
           
-          DatePicker("Target", selection: .constant(countdown.target ?? Date()), minimumDate: Date(), onCompletion: { countdown.target = $0 })
+          DatePicker("Target", selection: Binding { countdown.target ?? Date() } set: { countdown.target = $0 }, in: Date()...)
           
           // FIXME: why is this `objectWillChange.send()` needed?!
           Picker("Repeat", selection: Binding { countdown.repeat } set: { countdown.objectWillChange.send(); countdown.repeat = $0 }) {
@@ -106,7 +106,6 @@ struct EditForm_Previews: PreviewProvider {
       .previewDisplayName(device.rawValue.components(separatedBy: " - ").last!)
       .previewStatusBarTime(hidden: true)
     }
-//    .environment(\.locale, Locale(identifier: "ro"))
     .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
   }
 }
