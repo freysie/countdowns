@@ -2,7 +2,7 @@ import ClockKit
 import SwiftUI
 
 enum UserActivityType: String {
-  case viewing = "local.Countdowns.viewing"
+  case viewing = "local.freyaalminde.countdowns.viewing"
 }
 
 enum ComplicationDescriptorIdentifier: String {
@@ -61,7 +61,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   }
   
   func alwaysOnTemplate(for complication: CLKComplication) async -> CLKComplicationTemplate? {
-    timelineEntry(for: complication, date: Date.thisMinute, alwaysOn: true)?.complicationTemplate
+    timelineEntry(for: complication, date: .thisMinute, alwaysOn: true)?.complicationTemplate
   }
   
   // MARK: - Timeline Population
@@ -95,7 +95,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   }
   
   func currentTimelineEntry(for complication: CLKComplication) async -> CLKComplicationTimelineEntry? {
-    timelineEntry(for: complication, date: Date.thisMinute)
+    timelineEntry(for: complication, date: .thisMinute)
   }
   
   /// In order to have correct zero padding, we have a timeline entry for every minute.
@@ -114,7 +114,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   // MARK: - Sample Templates
   
   func localizableSampleTemplate(for complication: CLKComplication) async -> CLKComplicationTemplate? {
-    timelineEntry(for: complication, date: Date.thisMinute)?.complicationTemplate
+    timelineEntry(for: complication, date: .thisMinute)?.complicationTemplate
   }
 }
 

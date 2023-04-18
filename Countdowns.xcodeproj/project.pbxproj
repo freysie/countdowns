@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		090E175F272C999000169FD8 /* PrivateAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E175E272C999000169FD8 /* PrivateAPIs.swift */; };
 		0913FD5126FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
 		0913FD5226FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
 		0913FD5326FD71F400A28DEA /* Countdown+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */; };
@@ -187,7 +186,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		090E175E272C999000169FD8 /* PrivateAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateAPIs.swift; sourceTree = "<group>"; };
 		0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+Fetch.swift"; sourceTree = "<group>"; };
 		0942976927373E4A00998276 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		0942976B27373E5600998276 /* EditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForm.swift; sourceTree = "<group>"; };
@@ -300,6 +298,7 @@
 		3B3A1A1526F7D8CC00A4504D /* Countdowns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdowns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3A1A2826F7DA1B00A4504D /* EditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForm.swift; sourceTree = "<group>"; };
 		3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+NilIfEmpty.swift"; sourceTree = "<group>"; };
+		3BAB101929EF18C7003275BC /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,7 +355,6 @@
 				0997148326F99D3F00D33AF7 /* EditForm.swift */,
 				09AA659E26FCD6D800BD3F98 /* GaugeStyle+Fill.swift */,
 				0997142E26F8A62300D33AF7 /* ListView.swift */,
-				090E175E272C999000169FD8 /* PrivateAPIs.swift */,
 				0997143626F8A62400D33AF7 /* Assets.xcassets */,
 				09EAE3192700715F0036F047 /* ComplicationTemplates */,
 			);
@@ -430,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				09F9D13726FAB9CD00380D74 /* README.md */,
+				3BAB101929EF18C7003275BC /* TODO.md */,
 				09F9D16B26FAE77200380D74 /* Screenshots */,
 				3B3A1A0426F7D8B600A4504D /* Shared */,
 				0997142B26F8A62300D33AF7 /* watchOS */,
@@ -714,7 +713,6 @@
 				0997145026F8A78200D33AF7 /* Countdown+TimeRemaining.swift in Sources */,
 				09EAE32927007C730036F047 /* GraphicRectangular.swift in Sources */,
 				09D6A87E2705FF4300CB11FD /* Countdown+UUIDString.swift in Sources */,
-				090E175F272C999000169FD8 /* PrivateAPIs.swift in Sources */,
 				0997142F26F8A62300D33AF7 /* ListView.swift in Sources */,
 				0997144926F8A78200D33AF7 /* RepeatMode.swift in Sources */,
 				0997144D26F8A78200D33AF7 /* PersistenceController.swift in Sources */,
@@ -904,7 +902,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = watchOS/Info.plist;
@@ -921,7 +919,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns.watchkitapp.watchkitextension;
 				PRODUCT_NAME = Countdowns;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -939,7 +937,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = watchOS/Info.plist;
@@ -956,7 +954,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns.watchkitapp.watchkitextension;
 				PRODUCT_NAME = Countdowns;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -977,14 +975,16 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Countdowns__watchOS__Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = Countdowns;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = local.Countdowns;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = local.freyaalminde.countdowns;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns.watchkitapp;
 				PRODUCT_NAME = Countdowns;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1004,14 +1004,16 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Countdowns__watchOS__Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = Countdowns;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Countdowns uses Apple Music to optionally play a song when a countdown completes.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = local.Countdowns;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = local.freyaalminde.countdowns;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns.watchkitapp;
 				PRODUCT_NAME = Countdowns;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1148,7 +1150,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1166,7 +1168,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns;
 				PRODUCT_NAME = Countdowns;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1184,7 +1186,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1202,7 +1204,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns;
 				PRODUCT_NAME = Countdowns;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1222,7 +1224,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1239,7 +1241,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns;
 				PRODUCT_NAME = Countdowns;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1256,7 +1258,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WP9Q67QBW2;
+				DEVELOPMENT_TEAM = KUD8C8Y8Z7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1273,7 +1275,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Countdowns;
+				PRODUCT_BUNDLE_IDENTIFIER = local.freyaalminde.countdowns;
 				PRODUCT_NAME = Countdowns;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;

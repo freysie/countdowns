@@ -124,7 +124,7 @@ struct ToneStoreView: View {
   
   var body: some View {
     List {
-      ForEach(0..<products.count) { index in
+      ForEach(0..<products.count, id: \.self) { index in
         ToneStoreProductListItem(index: index, product: products[index])
       }
     }

@@ -15,7 +15,7 @@ struct ListView: View {
     List {
       if allowsDelete {
         ForEach(countdowns) { CountdownListItem(countdown: $0) }
-        .onDelete(perform: deleteItems)
+          .onDelete(perform: deleteItems)
       } else {
         ForEach(countdowns) { CountdownListItem(countdown: $0) }
       }
@@ -34,14 +34,10 @@ struct ListView: View {
       }
     }
     .sheet(item: $editedCountdown) { countdown in
-      NavigationView {
-        EditForm(countdown: countdown)
-      }
+      NavigationView { EditForm(countdown: countdown) }
     }
     .sheet(isPresented: $addSheetIsPresented) {
-      NavigationView {
-        EditForm(countdown: Countdown())
-      }
+      NavigationView { EditForm(countdown: Countdown()) }
     }
   }
   
