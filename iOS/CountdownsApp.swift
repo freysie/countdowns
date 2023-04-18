@@ -68,14 +68,14 @@ struct CountdownsApp: App {
       return true
     }
     
-    func application(_ application: UIApplication, handlerFor intent: INIntent) -> Any? {
-      switch intent {
-      case is SetCountdownIntent:
-        return nil
-      default:
-        return nil
-      }
-    }
+    // func application(_ application: UIApplication, handlerFor intent: INIntent) -> Any? {
+    //   switch intent {
+    //   case is SetCountdownIntent:
+    //     return nil
+    //   default:
+    //     return nil
+    //   }
+    // }
 
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,

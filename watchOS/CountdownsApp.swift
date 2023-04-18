@@ -6,7 +6,7 @@ let permitsUsageOfPrivateAPIs = true
 
 @main
 struct CountdownsApp: App {
-  @WKExtensionDelegateAdaptor(DelegateAdaptor.self) private var delegateAdaptor
+  @WKApplicationDelegateAdaptor(DelegateAdaptor.self) private var delegateAdaptor
   
   var body: some Scene {
     WindowGroup {
@@ -21,7 +21,7 @@ struct CountdownsApp: App {
     }
   }
   
-  class DelegateAdaptor: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate {
+  class DelegateAdaptor: NSObject, WKApplicationDelegate, UNUserNotificationCenterDelegate {
     func applicationDidFinishLaunching() {
       // print(CLKComplicationServer.sharedInstance().activeComplications as Any)
       
