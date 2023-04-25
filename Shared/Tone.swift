@@ -1,4 +1,4 @@
-enum Tone: String, CaseIterable, Identifiable {
+enum Tone: String, CaseIterable, Identifiable, Codable {
   case none 
   case beeps
   case bells

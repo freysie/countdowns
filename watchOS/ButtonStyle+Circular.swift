@@ -18,5 +18,5 @@ struct CircularButtonStyle: ButtonStyle {
 }
 
 extension Color {
-  static var buttonBackground: Self { .init(white: 0.103) }
+  static let buttonBackground = Color(white: 0.103)
 }

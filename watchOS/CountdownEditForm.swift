@@ -1,7 +1,7 @@
 import SwiftUI
 import WatchDatePicker
 
-struct EditForm: View {
+struct CountdownEditForm: View {
   @ObservedObject var countdown: Countdown
   
   @State private var deleteConfirmationIsPresented = false
@@ -102,7 +102,7 @@ struct EditForm_Previews: PreviewProvider {
   static var previews: some View {
     ForEach(previewDevices) { device in
       NavigationView {
-        EditForm(countdown: Countdown())
+        CountdownEditForm(countdown: Countdown())
       }
       .previewDevice(device)
       .previewDisplayName(device.rawValue.components(separatedBy: " - ").last!)

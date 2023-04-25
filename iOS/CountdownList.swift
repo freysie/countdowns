@@ -1,7 +1,7 @@
 import SwiftUI
 import CoreData
 
-struct ListView: View {
+struct CountdownList: View {
   @Environment(\.managedObjectContext) private var viewContext
   
   @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Countdown.target, ascending: true)])
@@ -34,10 +34,10 @@ struct ListView: View {
       }
     }
     .sheet(item: $editedCountdown) { countdown in
-      NavigationView { EditForm(countdown: countdown) }
+      NavigationView { CountdownEditForm(countdown: countdown) }
     }
     .sheet(isPresented: $addSheetIsPresented) {
-      NavigationView { EditForm(countdown: Countdown()) }
+      NavigationView { CountdownEditForm(countdown: Countdown()) }
     }
   }
   

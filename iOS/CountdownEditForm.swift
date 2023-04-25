@@ -2,7 +2,7 @@ import SwiftUI
 import Introspect
 
 // TODO: use nested managed object contexts?
-struct EditForm: View {
+struct CountdownEditForm: View {
   @ObservedObject var countdown: Countdown
   
 //  @FocusState private var labelIsFocused

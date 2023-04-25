@@ -10,7 +10,12 @@ class CountdownFormatter {
     let relativeDate = isTakingScreenshots ? previewDate : date
     return string(from: countdown.target?.timeIntervalSince(relativeDate) ?? 0, maximumUnitCount: maximumUnitCount)
   }
-  
+
+  class func string(for countdown: _Countdown, relativeTo date: Date, maximumUnitCount: Int? = nil) -> String {
+    let relativeDate = isTakingScreenshots ? previewDate : date
+    return string(from: countdown.target.timeIntervalSince(relativeDate), maximumUnitCount: maximumUnitCount)
+  }
+
   class func string(from ti: TimeInterval, maximumUnitCount: Int? = nil, locale: Locale? = nil) -> String {
     let componentsFormatter = DateComponentsFormatter()
     componentsFormatter.calendar!.locale = locale

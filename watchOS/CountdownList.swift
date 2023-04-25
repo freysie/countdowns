@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ListView: View {
+struct CountdownList: View {
   @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Countdown.target, ascending: true)])
   private var countdowns: FetchedResults<Countdown>
   
@@ -10,7 +10,7 @@ struct ListView: View {
   
   var body: some View {
     List(countdowns) { countdown in
-      NavigationLink(destination: DetailsView(countdown: countdown)) {
+      NavigationLink(destination: CountdownDetailsView(countdown: countdown)) {
         CountdownListItem(countdown: countdown)
       }
     }
@@ -18,7 +18,7 @@ struct ListView: View {
     .overlay {
       ForEach(countdowns) { countdown in
         NavigationLink(tag: countdown.uuidString, selection: $selectedCountdown) {
-          DetailsView(countdown: countdown)
+          CountdownDetailsView(countdown: countdown)
         } label: {
           EmptyView()
         }
@@ -34,7 +34,7 @@ struct ListView: View {
       .padding(.bottom, 15)
     }
     .sheet(isPresented: $addSheetIsPresented) {
-      EditForm(countdown: Countdown())
+      CountdownEditForm(countdown: Countdown())
     }
   }
 }

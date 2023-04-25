@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DetailsView: View {
+struct CountdownDetailsView: View {
   var countdown: Countdown
   
   @State private var editSheetIsPresented = false
@@ -17,7 +17,7 @@ struct DetailsView: View {
 //        .allowsHitTesting(false)
 //    }
     .sheet(isPresented: $editSheetIsPresented) {
-      EditForm(countdown: countdown)
+      CountdownEditForm(countdown: countdown)
     }
   }
   

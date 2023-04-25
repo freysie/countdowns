@@ -1,7 +1,7 @@
 import UserNotifications
 
 enum NotificationCategoryIdentifier: String { case countdownCompleted }
-enum NotificationActionIdentifier: String { case stop, stopAndDelete }
+enum NotificationActionIdentifier: String { case stop }
 
 // TODO: add/update/remove requests when adding/editing/deleting countdowns
 extension UNUserNotificationCenter {
@@ -18,13 +18,7 @@ extension UNUserNotificationCenter {
           identifier: NotificationActionIdentifier.stop.rawValue,
           title: "Stop",
           options: []
-        ),
-//        UNNotificationAction(
-//          identifier: NotificationActionIdentifier.stopAndDelete.rawValue,
-//          title: "Stop and Delete",
-//          options: [.destructive],
-//          icon: .init(systemImageName: "trash")
-//        )
+        )
       ]
       
 #if os(watchOS)
@@ -44,28 +38,27 @@ extension UNUserNotificationCenter {
       current().removeAllPendingNotificationRequests()
       
       let countdowns = try! PersistenceController.shared.container.viewContext.fetch(Countdown.fetchRequest())
-      
       for countdown in countdowns {
         try! await current().addRequest(for: countdown)
       }
     }
   }
-  
+
   func addRequest(for countdown: Countdown) async throws {
     guard countdown.target!.timeIntervalSinceNow > 0 else { return }
-    
+
     let content = UNMutableNotificationContent()
     content.categoryIdentifier = NotificationCategoryIdentifier.countdownCompleted.rawValue
     content.interruptionLevel = .timeSensitive
     content.userInfo = ["countdownID": countdown.uuidString]
-    
+
 #if os(watchOS)
     if let label = countdown.label { content.title = label }
 #else
     content.title = NSLocalizedString("Countdown", comment: "")
     if let label = countdown.label { content.body = label }
 #endif
-    
+
 #if canImport(AudioServices)
     content.tone = Tone.drums.notificationSound
 #endif
@@ -75,13 +68,47 @@ extension UNUserNotificationCenter {
       timeInterval: countdown.target!.timeIntervalSinceNow - 1,
       repeats: false
     )
-    
+
     let request = UNNotificationRequest(
       identifier: countdown.uuidString,
       content: content,
       trigger: trigger
     )
-    
+
+    try await add(request)
+  }
+
+  func addRequest(for countdown: _Countdown) async throws {
+    guard countdown.target.timeIntervalSinceNow > 0 else { return }
+
+    let content = UNMutableNotificationContent()
+    content.categoryIdentifier = NotificationCategoryIdentifier.countdownCompleted.rawValue
+    content.interruptionLevel = .timeSensitive
+    content.userInfo = ["countdownID": countdown.id.uuidString]
+
+#if os(watchOS)
+    if let label = countdown.label.nilIfEmpty { content.title = label }
+#else
+    content.title = NSLocalizedString("Countdown", comment: "")
+    if let label = countdown.label.nilIfEmpty { content.body = label }
+#endif
+
+#if canImport(AudioServices)
+    content.tone = Tone.drums.notificationSound
+#endif
+
+    // TODO: use `UNCalendarNotificationTrigger` instead
+    let trigger = UNTimeIntervalNotificationTrigger(
+      timeInterval: countdown.target.timeIntervalSinceNow - 1,
+      repeats: false
+    )
+
+    let request = UNNotificationRequest(
+      identifier: countdown.id.uuidString,
+      content: content,
+      trigger: trigger
+    )
+
     try await add(request)
   }
 }

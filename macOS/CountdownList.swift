@@ -1,9 +1,10 @@
 import SwiftUI
 import CoreData
 
-struct ListView: View {
+struct CountdownList: View {
   @Environment(\.managedObjectContext) private var viewContext
-  
+  @EnvironmentObject private var store: Store
+
   @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Countdown.target, ascending: true)])
   private var countdowns: FetchedResults<Countdown>
     
@@ -13,10 +14,10 @@ struct ListView: View {
   var body: some View {
     List {
       if allowsDelete {
-        ForEach(countdowns) { CountdownListItem(countdown: $0) }
+        ForEach(store.countdowns) { CountdownListItem(countdown: $0) }
         .onDelete(perform: deleteItems)
       } else {
-        ForEach(countdowns) { CountdownListItem(countdown: $0) }
+        ForEach(store.countdowns) { CountdownListItem(countdown: $0) }
       }
     }
     .frame(minWidth: 200)
@@ -29,20 +30,25 @@ struct ListView: View {
       }
     }
     .sheet(isPresented: $addSheetIsPresented) {
-      EditForm(countdown: Countdown())
+      CountdownEditForm(countdown: _Countdown(label: "")) {
+        store.add(countdown: $0)
+      }
     }
+//    if @available(macOS 13, *) {
+//      .contextMenu(forSelectionType: Any.self) { _ in EmptyView() } primaryAction: { print($0) }
+//    }
   }
   
   private func deleteItems(offsets: IndexSet) {
-    withAnimation {
-      offsets.map { countdowns[$0] }.forEach(viewContext.delete)
-      
-      do {
-        try viewContext.save()
-      } catch {
-        let nsError = error as NSError
-        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-      }
-    }
+//    withAnimation {
+//      offsets.map { store.countdowns[$0] }.forEach(viewContext.delete)
+//
+//      do {
+//        try viewContext.save()
+//      } catch {
+//        let nsError = error as NSError
+//        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//      }
+//    }
   }
 }

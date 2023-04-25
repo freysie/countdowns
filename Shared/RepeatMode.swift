@@ -1,6 +1,6 @@
 // TODO: finish the repeat functionality, i.e. move target date on every completion
 
-enum RepeatMode: String, CaseIterable, Identifiable {
+enum RepeatMode: String, CaseIterable, Identifiable, Codable {
   case never
   case daily
   case weekly

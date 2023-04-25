@@ -52,7 +52,7 @@ struct CountdownListItem: View {
     }
     .sheet(isPresented: $editSheetIsPresented) {
       NavigationView {
-        EditForm(countdown: countdown)
+        CountdownEditForm(countdown: countdown)
       }
     }
   }
