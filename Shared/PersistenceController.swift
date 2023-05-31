@@ -22,18 +22,18 @@ struct PersistenceController {
       }
     })
 
-#if os(macOS)
-    Task.detached(priority: .userInitiated) { [self] in
-      let countdowns = try! container.viewContext.fetch(Countdown.fetchRequest()) as [Countdown]
-      for countdown in countdowns {
-        if countdown.shownInMenuBar {
-          await MainActor.run {
-            _ = NSStatusBar.system.addStatusItem(for: countdown)
-          }
-        }
-      }
-    }
-#endif
+//#if os(macOS)
+//    Task.detached(priority: .userInitiated) { [self] in
+//      let countdowns = try! container.viewContext.fetch(Countdown.fetchRequest()) as [Countdown]
+//      for countdown in countdowns {
+//        if countdown.shownInMenuBar {
+//          await MainActor.run {
+//            _ = NSStatusBar.system.addStatusItem(for: countdown)
+//          }
+//        }
+//      }
+//    }
+//#endif
     
     NotificationCenter.default.addObserver(
       forName: NSManagedObjectContext.didChangeObjectsNotification,

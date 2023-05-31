@@ -1,37 +1,42 @@
 import SwiftUI
 import CoreData
 
-struct CountdownList: View {
-  @Environment(\.managedObjectContext) private var viewContext
-  @EnvironmentObject private var store: Store
+extension UUID: RawRepresentable {
+  public var rawValue: String { uuidString }
+  public init?(rawValue: String) { self.init(uuidString: rawValue) }
+}
 
-  @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Countdown.target, ascending: true)])
-  private var countdowns: FetchedResults<Countdown>
+struct CountdownList: View {
+  //@Environment(\.managedObjectContext) private var viewContext
+  @EnvironmentObject private var countdownStore: CountdownStore
+
+  //@FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Countdown.target, ascending: true)])
+  //private var countdowns: FetchedResults<Countdown>
     
+  @State private var selection: _Countdown.ID?
   @AppStorage("addSheetIsPresented") private var addSheetIsPresented = false
   @AppStorage("allowsDeleteInListView") private var allowsDelete = false
   
   var body: some View {
-    List {
+    List(selection: $selection) {
       if allowsDelete {
-        ForEach(store.countdowns) { CountdownListItem(countdown: $0) }
-        .onDelete(perform: deleteItems)
+        ForEach(countdownStore.countdowns) { CountdownListItem(countdown: $0) }
+          .onDelete(perform: deleteItems)
       } else {
-        ForEach(store.countdowns) { CountdownListItem(countdown: $0) }
+        ForEach(countdownStore.countdowns) { CountdownListItem(countdown: $0) }
       }
     }
     .frame(minWidth: 200)
     .toolbar {
-      ToolbarItem(placement: .primaryAction) {
-        Button(action: { addSheetIsPresented = true }) {
-          Label("Add Countdown", systemImage: "plus")
-            .imageScale(.large)
-        }
+      Spacer()
+      Button(action: { addSheetIsPresented = true }) {
+        Label("Add Countdown", systemImage: "plus")
+          .imageScale(.large)
       }
     }
     .sheet(isPresented: $addSheetIsPresented) {
       CountdownEditForm(countdown: _Countdown(label: "")) {
-        store.add(countdown: $0)
+        countdownStore.add($0)
       }
     }
 //    if @available(macOS 13, *) {
@@ -40,6 +45,7 @@ struct CountdownList: View {
   }
   
   private func deleteItems(offsets: IndexSet) {
+    //countdownStore.delete(countdownWithID: <#T##UUID#>)
 //    withAnimation {
 //      offsets.map { store.countdowns[$0] }.forEach(viewContext.delete)
 //

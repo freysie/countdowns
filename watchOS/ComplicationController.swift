@@ -36,6 +36,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
           activity.title = countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: "")
           activity.userInfo = [
             "countdownID": countdown.uuidString,
+            "_countdownID": countdown.id!,
             "countdownObjectID": countdown.objectID.uriRepresentation().absoluteString,
           ]
           return activity

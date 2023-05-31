@@ -8,7 +8,7 @@ struct CountdownListItem: View {
 
   @AppStorage("showsTargetInListView") private var showsTarget = false
   @Environment(\.managedObjectContext) private var viewContext
-  @EnvironmentObject private var store: Store
+  @EnvironmentObject private var countdownStore: CountdownStore
 
   var body: some View {
     NavigationLink {
@@ -31,7 +31,8 @@ struct CountdownListItem: View {
             
             Text(countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""))
               .font(.headline)
-              .foregroundColor(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? .secondary : .accentColor)
+              .foregroundStyle(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? AnyShapeStyle(.secondary) : AnyShapeStyle(.tint))
+              //.foregroundColor(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? .secondary : .accentColor)
             
             if showsTarget {
               //              if let source = countdown.source {
@@ -52,7 +53,7 @@ struct CountdownListItem: View {
     }
     .sheet(isPresented: $editSheetIsPresented) {
       CountdownEditForm(countdown: countdown) {
-        store.update(countdownWithID: countdown.id, withContentsOf: $0)
+        countdownStore.update(countdownWithID: countdown.id, withContentsOf: $0)
       }
     }
     .confirmationDialog(
@@ -65,7 +66,7 @@ struct CountdownListItem: View {
     .contextMenu {
       Button("Edit Countdown", action: { editSheetIsPresented = true })
 
-      Toggle("Show in Menu Bar", isOn: .constant(countdown.shownInMenuBar))
+      Toggle("Show in Menu Bar", isOn: shownInMenuBarBinding)
         //.onSubmit { try! viewContext.save() }
 
       Divider()
@@ -73,8 +74,18 @@ struct CountdownListItem: View {
       Button("Delete", action: { deleteConfirmationIsPresented = true })
     }
   }
+
+  private var shownInMenuBarBinding: Binding<Bool> {
+    Binding {
+      countdown.shownInMenuBar
+    } set: {
+      var countdown = countdown
+      countdown.shownInMenuBar = $0
+      countdownStore.update(countdownWithID: countdown.id, withContentsOf: countdown)
+    }
+  }
   
   private func delete() {
-    store.delete(countdownWithID: countdown.id)
+    countdownStore.delete(countdownWithID: countdown.id)
   }
 }

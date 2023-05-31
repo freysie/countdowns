@@ -4,17 +4,21 @@ import Introspect
 
 @main
 struct App: SwiftUI.App {
+  @StateObject private var userNotifications = UserNotifications()
+  @StateObject private var menuExtraCoordinator = MenuExtraCoordinator()
+  @StateObject private var countdownStore = CountdownStore()
   @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegateAdaptor
-  @StateObject private var store = Store()
 
   var body: some Scene {
     WindowGroup {
       NavigationView {
         CountdownList()
-        EmptyView()
+        Text("No Selection").font(.title2).foregroundStyle(.secondary)
       }
       .frame(minWidth: 500, minHeight: 500)
-      .environmentObject(store)
+      .environmentObject(countdownStore)
+      //.environmentObject(userNotifications)
+      //.environmentObject(menuExtraCoordinator)
       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
       .introspectSplitView { $0.window?.titlebarAppearsTransparent = true }
     }
@@ -36,12 +40,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     _ center: UNUserNotificationCenter,
     willPresent notification: UNNotification
   ) async -> UNNotificationPresentationOptions {
-    [.sound, .banner]
+    return [.sound, .banner]
   }
-}
 
-extension View {
-  func introspectSplitView(customize: @escaping (NSSplitView) -> ()) -> some View {
-    introspect(selector: TargetViewSelector.siblingContaining, customize: customize)
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    didReceive response: UNNotificationResponse
+  ) async {
+    guard let idString = response.notification.request.content.userInfo["countdownID"] as? String else { return }
+    print(UUID(uuidString: idString) as Any)
+    //UserDefaults.standard.set(id, forKey: "selectedCountdown")
   }
 }

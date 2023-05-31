@@ -13,7 +13,7 @@ struct CountdownEditForm: View {
 //
 //  private var editContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
   @Environment(\.dismiss) private var dismiss
-  @Environment(\.managedObjectContext) private var viewContext
+  //@Environment(\.managedObjectContext) private var viewContext
 
   var body: some View {
     Form {
@@ -64,26 +64,11 @@ struct CountdownEditForm: View {
   }
   
   private func cancel() {
-//    viewContext.rollback()
     dismiss()
   }
   
   private func save() {
     onComplete(countdown)
     dismiss()
-
-//    countdown.objectWillChange.send()
-//
-//    if countdown.managedObjectContext == nil {
-//      viewContext.insert(countdown)
-//    }
-//
-//    do {
-//      try viewContext.save()
-//      dismiss()
-//    } catch {
-//      let nsError = error as NSError
-//      fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//    }
   }
 }

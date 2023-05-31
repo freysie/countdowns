@@ -8,8 +8,9 @@ var tabBarController: UITabBarController?
 
 @main
 struct App: SwiftUI.App {
+  //@StateObject private var userNotifications = UserNotifications()
+  //@StateObject private var countdownStore = CountdownStore()
   @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegateAdaptor
-  @StateObject private var store = Store()
 
   @AppStorage("upNextIsEnabled") private var upNextIsEnabled = true
   @AppStorage("statusBarIsHidden") private var statusBarIsHidden = false
