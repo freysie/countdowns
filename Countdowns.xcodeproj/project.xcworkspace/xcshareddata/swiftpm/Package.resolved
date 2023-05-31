@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
       "state" : {
-        "revision" : "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
-        "version" : "0.1.3"
+        "revision" : "c18951c747ab62af7c15e17a81bd37d4fd5a9979",
+        "version" : "0.2.3"
       }
     },
     {
@@ -24,7 +24,7 @@
       "location" : "https://github.com/freyaariel/watch-date-picker.git",
       "state" : {
         "branch" : "main",
-        "revision" : "4b61e02b80dd07e3d2f952df91bc48eb3c73336f"
+        "revision" : "23a6727df1dff5918e183cd4c69881fffdaf4248"
       }
     }
   ],
