@@ -127,10 +127,16 @@
 		3B3A1A1D26F7D8CC00A4504D /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A1A0926F7D8B600A4504D /* PersistenceController.swift */; };
 		3B3A1A1E26F7D8CC00A4504D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A1A0A26F7D8CC00A4504D /* Assets.xcassets */; };
 		3B3A1A1F26F7D8CC00A4504D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A1A0A26F7D8CC00A4504D /* Assets.xcassets */; };
-		3B3A1A2926F7DA1B00A4504D /* CountdownEditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A1A2826F7DA1B00A4504D /* CountdownEditForm.swift */; };
-		3B9485FF27BDDD7D00644483 /* Collection+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Collection+NilIfEmpty.swift */; };
-		3B94860027BDDD7E00644483 /* Collection+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Collection+NilIfEmpty.swift */; };
-		3B94860127BDDD7E00644483 /* Collection+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Collection+NilIfEmpty.swift */; };
+		3B3A1A2926F7DA1B00A4504D /* EditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A1A2826F7DA1B00A4504D /* EditForm.swift */; };
+		3B8C9DB829F76034001A7A41 /* Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3B99700129EF381B00B690CE /* Dynamic */; };
+		3B8C9DB929F76034001A7A41 /* WatchDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B99700229EF381B00B690CE /* WatchDatePicker */; };
+		3B8C9DBA29F76034001A7A41 /* WatchDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B99700329EF381B00B690CE /* WatchDatePicker */; };
+		3B8C9DBB29F7613E001A7A41 /* Countdown+Awake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99700829EF3C8A00B690CE /* Countdown+Awake.swift */; };
+		3B8C9DBC29F7613E001A7A41 /* Countdown+Awake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99700829EF3C8A00B690CE /* Countdown+Awake.swift */; };
+		3B8C9DBD29F7613F001A7A41 /* Countdown+Awake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99700829EF3C8A00B690CE /* Countdown+Awake.swift */; };
+		3B9485FF27BDDD7D00644483 /* Optional+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */; };
+		3B94860027BDDD7E00644483 /* Optional+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */; };
+		3B94860127BDDD7E00644483 /* Optional+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9485FE27BDDD5500644483 /* Optional+NilIfEmpty.swift */; };
 		3B99700629EF3C0A00B690CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B99700429EF3B8700B690CE /* Assets.xcassets */; };
 		3B99700729EF3C1000B690CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B99700529EF3B8A00B690CE /* Assets.xcassets */; };
 		3B9A7C4029EF4509003BF789 /* Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3B99700129EF381B00B690CE /* Dynamic */; };
@@ -291,9 +297,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B9A7C4229EF4509003BF789 /* WatchDatePicker in Frameworks */,
-				3B9A7C4129EF4509003BF789 /* WatchDatePicker in Frameworks */,
-				3B9A7C4029EF4509003BF789 /* Dynamic in Frameworks */,
+				3B8C9DBA29F76034001A7A41 /* WatchDatePicker in Frameworks */,
+				3B8C9DB929F76034001A7A41 /* WatchDatePicker in Frameworks */,
+				3B8C9DB829F76034001A7A41 /* Dynamic in Frameworks */,
 				09F07B9027307D060040474C /* WatchDatePicker in Frameworks */,
 				0997145D26F8A7EF00D33AF7 /* Dynamic in Frameworks */,
 				094297682737325600998276 /* WatchDatePicker in Frameworks */,
@@ -433,7 +439,6 @@
 			children = (
 				0997141B26F89F8400D33AF7 /* Settings.bundle */,
 				09ACC3C42729C0B30055A212 /* Intents.intentdefinition */,
-				3B9A7C4629EF4913003BF789 /* _Countdown.swift */,
 				3B99700829EF3C8A00B690CE /* Countdown+Awake.swift */,
 				095D00A226FB81D400A0B704 /* Countdown+EffectiveSource.swift */,
 				0913FD5026FD71F400A28DEA /* Countdown+Fetch.swift */,
@@ -705,7 +710,7 @@
 				0997142D26F8A62300D33AF7 /* App.swift in Sources */,
 				09AA65A026FCD6EF00BD3F98 /* GaugeStyle+Fill.swift in Sources */,
 				0997145526F8A78200D33AF7 /* String+TitleCased.swift in Sources */,
-				3B9A7C4329EF45E1003BF789 /* Countdown+Awake.swift in Sources */,
+				3B8C9DBC29F7613E001A7A41 /* Countdown+Awake.swift in Sources */,
 				0997144826F8A78200D33AF7 /* CountdownFormatter.swift in Sources */,
 				0997145626F8A78600D33AF7 /* Countdowns.xcdatamodeld in Sources */,
 				3B9A7C4829EF4913003BF789 /* _Countdown.swift in Sources */,
@@ -735,7 +740,7 @@
 				095D00A726FB8C2C00A0B704 /* ToneStore.swift in Sources */,
 				09D6A87A2705E63F00CB11FD /* Optional+RawRepresentableString.swift in Sources */,
 				09F9D14E26FACEAD00380D74 /* UNUserNotificationCenter+Configure.swift in Sources */,
-				3B9A7C4529EF45E2003BF789 /* Countdown+Awake.swift in Sources */,
+				3B8C9DBD29F7613F001A7A41 /* Countdown+Awake.swift in Sources */,
 				09C12C5C26F8170400BD84ED /* NavigationLink+Empty.swift in Sources */,
 				3B3A1A1C26F7D8CC00A4504D /* PersistenceController.swift in Sources */,
 				3B94860127BDDD7E00644483 /* Collection+NilIfEmpty.swift in Sources */,
@@ -776,7 +781,7 @@
 				3B3A1A1726F7D8CC00A4504D /* Countdowns.xcdatamodeld in Sources */,
 				09D6A8772705BEE100CB11FD /* Countdown+Song.swift in Sources */,
 				3B3A1A1D26F7D8CC00A4504D /* PersistenceController.swift in Sources */,
-				3B9A7C4429EF45E1003BF789 /* Countdown+Awake.swift in Sources */,
+				3B8C9DBB29F7613E001A7A41 /* Countdown+Awake.swift in Sources */,
 				09F9D14F26FACEAD00380D74 /* UNUserNotificationCenter+Configure.swift in Sources */,
 				09C12C5726F8118600BD84ED /* CountdownProgressView.swift in Sources */,
 				3B9A7C4929EF4913003BF789 /* _Countdown.swift in Sources */,
