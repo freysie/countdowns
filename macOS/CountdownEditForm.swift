@@ -45,8 +45,8 @@ struct CountdownEditForm: View {
         }
       }
     }
-    .padding()
-    .padding()
+    .padding(20)
+    .fixedSize()
     //.navigationTitle(countdown.managedObjectContext == nil ? "Add Countdown" : "Edit Countdown")
     .toolbar {
       ToolbarItemGroup(placement: .cancellationAction) {

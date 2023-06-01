@@ -33,10 +33,11 @@ struct CountdownList: View {
         Label("Add Countdown", systemImage: "plus")
           .imageScale(.large)
       }
+      .focusable(false)
     }
     .sheet(isPresented: $addSheetIsPresented) {
       CountdownEditForm(countdown: _Countdown(label: "")) {
-        countdownStore.add($0)
+        countdownStore.addCountdown($0)
       }
     }
 //    if @available(macOS 13, *) {

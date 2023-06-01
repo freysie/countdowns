@@ -5,19 +5,18 @@ struct CountdownListItem: View {
 
   @State private var editSheetIsPresented = false
   @State private var deleteConfirmationIsPresented = false
-
   @AppStorage("showsTargetInListView") private var showsTarget = false
-  @Environment(\.managedObjectContext) private var viewContext
   @EnvironmentObject private var countdownStore: CountdownStore
 
   var body: some View {
     NavigationLink {
       _CountdownProgressView(countdown: countdown)
         // .focusable()
-        .frame(minWidth: 500)
+        .frame(width: 450)
         .padding()
         .padding()
         .offset(x: 0, y: -38/2)
+        //.focusable()
     } label: {
       HStack {
         TimelineView(.countdown) { schedule in
@@ -29,7 +28,7 @@ struct CountdownListItem: View {
             // .minimumScaleFactor(0.5)
               .foregroundStyle(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? .primary : .tertiary)
             
-            Text(countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""))
+            Text(countdown.effectiveLabel)
               .font(.headline)
               .foregroundStyle(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? AnyShapeStyle(.secondary) : AnyShapeStyle(.tint))
               //.foregroundColor(countdown.timeRemaining(relativeTo: schedule.date) > 1 ? .secondary : .accentColor)
@@ -53,15 +52,15 @@ struct CountdownListItem: View {
     }
     .sheet(isPresented: $editSheetIsPresented) {
       CountdownEditForm(countdown: countdown) {
-        countdownStore.update(countdownWithID: countdown.id, withContentsOf: $0)
+        countdownStore.updateCountdown(withID: countdown.id, withContentsOf: $0)
       }
     }
     .confirmationDialog(
       "Are you sure you want to delete this countdown?",
       isPresented: $deleteConfirmationIsPresented
     ) {
-      Button("Delete Countdown", role: .destructive, action: delete)
       Button("Cancel", role: .cancel, action: { deleteConfirmationIsPresented = false })
+      Button("Delete Countdown", role: .destructive, action: delete)
     }
     .contextMenu {
       Button("Edit Countdown", action: { editSheetIsPresented = true })
@@ -81,11 +80,11 @@ struct CountdownListItem: View {
     } set: {
       var countdown = countdown
       countdown.shownInMenuBar = $0
-      countdownStore.update(countdownWithID: countdown.id, withContentsOf: countdown)
+      countdownStore.updateCountdown(withID: countdown.id, withContentsOf: countdown)
     }
   }
   
   private func delete() {
-    countdownStore.delete(countdownWithID: countdown.id)
+    countdownStore.deleteCountdown(withID: countdown.id)
   }
 }

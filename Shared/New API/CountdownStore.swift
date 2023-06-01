@@ -1,8 +1,8 @@
 import Foundation
-import UserNotifications
+import Combine
 
 class CountdownStore: ObservableObject {
-  @Published var countdowns = [_Countdown]()
+  static let shared = CountdownStore()
 
   private static func fileURL() throws -> URL {
     //FileManager.default.url(forUbiquityContainerIdentifier: nil)!.appendingPathComponent("Documents")
@@ -10,11 +10,19 @@ class CountdownStore: ObservableObject {
       .appendingPathComponent("countdowns.json")
   }
 
-  init() {
-//    add(_Countdown(label: "yaaaaas", target: .fiveSecondsFromNow))
+  @Published var countdowns = [_Countdown]()
 
-    Task { try! await load() }
-    add(_Countdown(label: "yaaaaas", target: .twoSecondsFromNow, tone: .drums, shownInMenuBar: true))
+  let countdownsLoaded = PassthroughSubject<[_Countdown], Never>()
+  let countdownAdded = PassthroughSubject<_Countdown, Never>()
+  let countdownUpdated = PassthroughSubject<_Countdown, Never>()
+  let countdownDeleted = PassthroughSubject<_Countdown, Never>()
+
+  init() {
+    Task {
+      try! await load()
+      //await addCountdown(_Countdown(label: "yaaaaas", target: .twoSecondsFromNow, tone: .drums, shownInMenuBar: true))
+      //await addCountdown(_Countdown(label: "yaaaaas", target: .fiveSecondsFromNow))
+    }
   }
 
   @MainActor func load() async throws {
@@ -26,10 +34,7 @@ class CountdownStore: ObservableObject {
     }
 
     countdowns = try await task.value
-
-    NotificationCenter.default.post(name: Self.didLoadCountdownsNotification, object: self, userInfo: [
-      "countdowns": countdowns
-    ])
+    countdownsLoaded.send(countdowns)
   }
 
   func save() async throws {
@@ -47,43 +52,25 @@ class CountdownStore: ObservableObject {
     countdowns.first { $0.id == id }
   }
 
-  func add(_ countdown: _Countdown) {
+  @MainActor func addCountdown(_ countdown: _Countdown) {
     countdowns.append(countdown)
+    countdownAdded.send(countdown)
     Task { try! await save() }
-    NotificationCenter.default.post(name: Self.didAddCountdownNotification, object: self, userInfo: [
-      "countdown": countdown
-    ])
   }
 
-  func update(countdownWithID id: UUID, withContentsOf countdown: _Countdown) {
+  @MainActor func updateCountdown(withID id: UUID, withContentsOf countdown: _Countdown) {
     guard let index = countdowns.firstIndex(where: { $0.id == id }) else { return }
     countdowns[index] = countdown
     countdowns[index].id = id
+    countdownUpdated.send(countdowns[index])
     Task { try! await save() }
-    NotificationCenter.default.post(name: Self.didUpdateCountdownNotification, object: self, userInfo: [
-      "countdown": countdowns[index]
-    ])
   }
 
-  func delete(countdownWithID id: UUID) {
+  @MainActor func deleteCountdown(withID id: UUID) {
     guard let index = countdowns.firstIndex(where: { $0.id == id }) else { return }
     let countdown = countdowns[index]
     countdowns.remove(at: index)
+    countdownDeleted.send(countdown)
     Task { try! await save() }
-    NotificationCenter.default.post(name: Self.didRemoveCountdownNotification, object: self, userInfo: [
-      "countdown": countdown
-    ])
   }
-}
-
-extension CountdownStore {
-  static let didLoadCountdownsNotification = Notification.Name("CountdownStoreDidLoadCountdowns")
-  static let didAddCountdownNotification = Notification.Name("CountdownStoreDidAddCountdown")
-  static let didUpdateCountdownNotification = Notification.Name("CountdownStoreDidUpdateCountdown")
-  static let didRemoveCountdownNotification = Notification.Name("CountdownStoreDidRemoveCountdown")
-
-  // enum NotificationUserInfoKey {
-  //   static let countdown = "Countdown"
-  //   static let countdowns = "Countdowns"
-  // }
 }

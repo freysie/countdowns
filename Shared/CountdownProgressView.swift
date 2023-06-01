@@ -116,9 +116,17 @@ struct _CountdownProgressView: View {
     }
   }
 
-  var trackColor: Color {
+  var trackColor: Color?
+
+  var effectiveTrackColor: Color {
+    if let trackColor { return trackColor }
+
     switch style {
+#if os(macOS)
+    case .`default`: return Color(white: 0.23)
+#else
     case .`default`: return Color(white: 0.1)
+#endif
     case .complication: return Color.orange.opacity(0.5)
 //    case .complication: return Color(uiColor: .orange.withAlphaComponent(0.5))
     }
@@ -128,11 +136,11 @@ struct _CountdownProgressView: View {
     TimelineView(.countdown) { schedule in
       ZStack {
         Circle()
-          .stroke(trackColor, lineWidth: lineWidth)
+          .stroke(effectiveTrackColor, lineWidth: lineWidth)
 
         Circle()
           .trim(from: 0, to: 1 - countdown.progress(relativeTo: schedule.date))
-          .stroke(Color.orange, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
+          .stroke(.tint, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
       }
       .rotationEffect(.degrees(-90))
       .overlay {
@@ -173,7 +181,7 @@ struct _CountdownProgressView: View {
   }
 
   func label(relativeTo date: Date) -> some View {
-    Text(countdown.label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: ""))
+    Text(countdown.effectiveLabel)
 //    Text("\(countdown.progress.relativeTo(date))")
 #if os(iOS) || os(macOS)
       .font(.system(size: 21))

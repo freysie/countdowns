@@ -145,7 +145,7 @@
 		3BCA7BF52A275A0F00340715 /* UserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BF42A2758DC00340715 /* UserNotifications.swift */; };
 		3BCA7BF62A275A1000340715 /* UserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BF42A2758DC00340715 /* UserNotifications.swift */; };
 		3BCA7BF72A275A1100340715 /* UserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BF42A2758DC00340715 /* UserNotifications.swift */; };
-		3BCA7BF82A275A1600340715 /* MenuExtraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BEE2A27587C00340715 /* MenuExtraCoordinator.swift */; };
+		3BCA7BF82A275A1600340715 /* MenuBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BEE2A27587C00340715 /* MenuBarItems.swift */; };
 		3BCA7BF92A27654900340715 /* Date+FromNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BED2A274EBB00340715 /* Date+FromNow.swift */; };
 		3BCA7BFA2A27654900340715 /* Date+FromNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BED2A274EBB00340715 /* Date+FromNow.swift */; };
 		3BCA7BFB2A27654900340715 /* Date+FromNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA7BED2A274EBB00340715 /* Date+FromNow.swift */; };
@@ -294,9 +294,10 @@
 		3B99700829EF3C8A00B690CE /* Countdown+Awake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Countdown+Awake.swift"; sourceTree = "<group>"; };
 		3BAB101929EF18C7003275BC /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		3BCA7BED2A274EBB00340715 /* Date+FromNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FromNow.swift"; sourceTree = "<group>"; };
-		3BCA7BEE2A27587C00340715 /* MenuExtraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuExtraCoordinator.swift; sourceTree = "<group>"; };
+		3BCA7BEE2A27587C00340715 /* MenuBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarItems.swift; sourceTree = "<group>"; };
 		3BCA7BF02A2758A100340715 /* CountdownStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownStore.swift; sourceTree = "<group>"; };
 		3BCA7BF42A2758DC00340715 /* UserNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotifications.swift; sourceTree = "<group>"; };
+		3BCA7BFC2A27D5DB00340715 /* _Countdown+Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_Countdown+Song.swift"; sourceTree = "<group>"; };
 		3BEA0D4B2A2748B3008540CB /* _Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Countdown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -419,7 +420,7 @@
 			children = (
 				09ACC3C82729C1520055A212 /* Info.plist */,
 				09F9D14B26FACD5000380D74 /* App.swift */,
-				3BCA7BEE2A27587C00340715 /* MenuExtraCoordinator.swift */,
+				3BCA7BEE2A27587C00340715 /* MenuBarItems.swift */,
 				0942976B27373E5600998276 /* CountdownEditForm.swift */,
 				0942976927373E4A00998276 /* CountdownList.swift */,
 				0942976E27373FDE00998276 /* CountdownListItem.swift */,
@@ -499,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				3BEA0D4B2A2748B3008540CB /* _Countdown.swift */,
+				3BCA7BFC2A27D5DB00340715 /* _Countdown+Song.swift */,
 				3BCA7BF02A2758A100340715 /* CountdownStore.swift */,
 				3BCA7BF42A2758DC00340715 /* UserNotifications.swift */,
 			);
@@ -798,7 +800,7 @@
 				09C12CB426F8835E00BD84ED /* Tone.swift in Sources */,
 				09F9D14826FAC95000380D74 /* PersistenceController+Preview.swift in Sources */,
 				09C12CB726F8862100BD84ED /* String+TitleCased.swift in Sources */,
-				3BCA7BF82A275A1600340715 /* MenuExtraCoordinator.swift in Sources */,
+				3BCA7BF82A275A1600340715 /* MenuBarItems.swift in Sources */,
 				0913FD5226FD71F400A28DEA /* Countdown+Fetch.swift in Sources */,
 				3BEA0D4E2A2748B3008540CB /* _Countdown.swift in Sources */,
 				3BCA7BF22A2758A100340715 /* CountdownStore.swift in Sources */,

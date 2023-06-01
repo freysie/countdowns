@@ -1,6 +1,6 @@
 import Foundation
 
-struct _Countdown: Identifiable, Codable, Hashable {
+struct _Countdown: Identifiable, Codable {
   var id = UUID()
   var label: String
   var source = Date()
@@ -9,6 +9,10 @@ struct _Countdown: Identifiable, Codable, Hashable {
   var tone = Tone.none
   var songID: Int64?
   var shownInMenuBar = false
+
+  var effectiveLabel: String {
+    label.nilIfEmpty ?? NSLocalizedString("Countdown", comment: "")
+  }
 
   var effectiveSource: Date? {
     guard `repeat` != .never else { return source }
@@ -22,7 +26,7 @@ struct _Countdown: Identifiable, Codable, Hashable {
   }
 
   func progress(relativeTo date: Date) -> Double {
-    let effectiveSource = source // FIXME
+    let effectiveSource = effectiveSource ?? source
 
     let relativeDate = isTakingScreenshots ? previewDate : date
     guard target > relativeDate else { return 1 }
@@ -35,6 +39,35 @@ struct _Countdown: Identifiable, Codable, Hashable {
 
 extension _Countdown: CustomStringConvertible {
   var description: String {
-    "\(Self.self)(\(CountdownFormatter.string(from: timeRemaining)) - \(label))"
+    "\(Self.self)(\(CountdownFormatter.string(from: timeRemaining, showsSign: true)) - \(effectiveLabel))"
   }
 }
+
+
+#if !os(macOS)
+import MediaPlayer
+extension _Countdown {
+  var song: MPMediaItem? {
+    get {
+      guard let songID = songID else { return nil }
+      
+      let query = MPMediaQuery()
+      query.addFilterPredicate(MPMediaPropertyPredicate(
+        value: songID,
+        forProperty: MPMediaItemPropertyAlbumPersistentID,
+        comparisonType: .equalTo
+      ))
+      
+      return query.items?.first
+    }
+    
+    set {
+      if let newValue = newValue {
+        songID = newValue.persistentID as NSNumber
+      } else {
+        songID = nil
+      }
+    }
+  }
+}
+#endif

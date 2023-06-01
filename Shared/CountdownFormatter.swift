@@ -1,7 +1,6 @@
 import SwiftUI
 
 private let fractionDigits = 0
-private let showsNegativeSign = false
 private let animatesFractionSecondsInScreenshots = true
 
 // TODO: rework this to support custom display styles
@@ -16,7 +15,12 @@ class CountdownFormatter {
     return string(from: countdown.target.timeIntervalSince(relativeDate), maximumUnitCount: maximumUnitCount)
   }
 
-  class func string(from ti: TimeInterval, maximumUnitCount: Int? = nil, locale: Locale? = nil) -> String {
+  class func string(
+    from ti: TimeInterval,
+    maximumUnitCount: Int? = nil,
+    locale: Locale? = nil,
+    showsSign: Bool = false
+  ) -> String {
     let componentsFormatter = DateComponentsFormatter()
     componentsFormatter.calendar!.locale = locale
     componentsFormatter.unitsStyle = .positional
@@ -56,7 +60,7 @@ class CountdownFormatter {
     if fractionSeconds < 0 { fractionSeconds += pow(10, Double(fractionDigits)) }
     let formattedFraction = fractionFormatter.string(from: fractionSeconds as NSNumber)!
     
-    return (ti < 0 && showsNegativeSign ? "-" : "") + formatter
+    return (ti < 0 && showsSign ? "-" : "") + formatter
       .string(from: ti)!
       .replacingOccurrences(of: "\(daySymbol) ", with: timeSeparator)
       .replacingOccurrences(of: "\(daysSymbol) ", with: timeSeparator)
