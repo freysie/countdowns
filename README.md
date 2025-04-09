@@ -1,4 +1,4 @@
-# <img src="https://github.com/freyaariel/countdowns/blob/main/Shared/Assets.xcassets/AppIcon.appiconset/icon_40pt@2x.png?raw=true" alt="" width="40" valign="bottom" style="border-radius: 50%"> Countdowns 
+# <img src="https://github.com/freysie/countdowns/blob/main/iOS/Assets.xcassets/AppIcon.appiconset/icon-1.png?raw=true" alt="" width="40" valign="bottom" style="border-radius: 50%"> Countdowns
 
 Calculate time remaining until events on <!-- realityOS,  --> watchOS and iOS.
 
